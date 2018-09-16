@@ -1,22 +1,30 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-</head>
+<html><head><title>Inserindo dados no banco</title></head>
 <body>
-<h1>Hello, world!</h1>
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
-</html>
+<?php
+/* insert students into DB */
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $db = new mysqli('localhost', 'root', '', 'api_mal');
+    if ($db->connect_errno)
+        echo "Erro na conexão com o banco de dados: " . $db->connect_error;
+    $sql = "INSERT INTO aluno VALUES(" . $_POST["matric"] . ",'" .
+        $_POST["nome"] . "','" . $_POST["endereco"] . "','" . $_POST["email"] . "')";
+    echo $sql;
+    if (!$db->query($sql))
+        echo "Erro na execução da query";
+    $db->close();
+    echo"<h3>Obrigado. Seus dados foram inseridos</h3> \n";
+    echo'<p><a href="principal.php">Pagina inicial</a></p>' . "\n";
+} else {
+    ?>
+    <h3>Entre com seus dados</h3>
+    <form action="data_in.php" method="post">
+        Matricula: <input type="number" name="matric" /> <br/>
+        Nome......: <input type="text" name="nome" /> <br/>
+        Endereco.: <input type="text" name="endereco" /> <br/>
+        email.......: <input type="text" name="email" /> <br/>
+        <br/>
+        <input type="submit" name="submit" /> <input type="reset" />
+    </form>
+    <p><a href="principal.php">Pagina inicial</a></p>
+<?php } ?>
+</body></html>
