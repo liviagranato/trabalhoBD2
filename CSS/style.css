@@ -1,0 +1,7 @@
+.background-index{
+    background-image: url("../resource/konata.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover;
+}
