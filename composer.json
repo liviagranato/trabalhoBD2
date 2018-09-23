@@ -1,0 +1,5 @@
+{
+    "require": {
+        "jikan-me/jikan": "^1.16"
+    }
+}
