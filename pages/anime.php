@@ -8,8 +8,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <?php include 'navbar.php'; ?>
@@ -38,11 +40,62 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db->close();
     echo '<p><a href="principal.php">Pagina inicial</a></p>' . "\n";
 } else { ?>
-    <div>
-        <form action="consultar_estudante.php" method="post">
-            <input type="number" name="c_matric" placeholder="nome">
-            <input type="submit" name="s_submit" value="Buscar">
-        </form>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <div class="container">
+        <br/>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <form>
+                    <div class="card-body row no-gutters align-items-center">
+                        <!--end of col-->
+                        <div class="col">
+                            <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Buscar Anime">
+                        </div>
+                        <!--end of col-->
+                        <div class="col-auto">
+                            <button class="btn btn-lg btn-success" type="submit">Buscar</button>
+                        </div>
+                        <!--end of col-->
+                    </div>
+                </form>
+            </div>
+            <!--end of col-->
+        </div>
+    </div>
+    <div
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <p class="titulo">Título</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <p class="titulo">Título2</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <p class="titulo">Título3</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <p class="label-cards">Título4</p>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <p class="label-cards">Título5</p>
+                </div>
+            </div>
+        </div>
     </div>
 <?php } ?>
 </body>

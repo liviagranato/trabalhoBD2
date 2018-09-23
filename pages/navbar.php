@@ -14,7 +14,6 @@
                     <a class="dropdown-item" href="anime.php">Anime</a>
                     <a class="dropdown-item" href="manga.php">Manga</a>
                     <a class="dropdown-item" href="personagem.php">Personagem</a>
-                    <a class="dropdown-item" href="dubladores.php">Dubladores</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -22,9 +21,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="cronograma.php">Cronograma</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="ranking.php">Ranking</a>
             </li>
 
         </ul>
