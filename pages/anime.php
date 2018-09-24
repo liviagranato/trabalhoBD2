@@ -65,31 +65,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <div class="row row-cards">
             <div class="col-sm">
-                <div class="card card-imagem" onclick="">
+                <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
                     <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
                     <div class="div-titulo"><p class="titulo">Título1</p></div>
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card card-imagem" onclick="">
+                <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
                     <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
                     <div class="div-titulo"><p class="titulo">Título2</p></div>
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card card-imagem" onclick="">
+                <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
                     <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
                     <div class="div-titulo"><p class="titulo">Título3</p></div>
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card card-imagem" onclick="">
+                <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
                     <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
                     <div class="div-titulo"><p class="titulo">Título4</p></div>
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card card-imagem" onclick="">
+                <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
                     <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
                     <div class="div-titulo"><p class="titulo">Título5</p></div>
                 </div>
@@ -97,31 +97,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="row">
             <div class="col-sm">
-                <div class="card card-imagem" onclick="">
+                <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
                     <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
                     <div class="div-titulo"><p class="titulo">Título1</p></div>
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card card-imagem" onclick="">
+                <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
                     <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
                     <div class="div-titulo"><p class="titulo">Título2</p></div>
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card card-imagem" onclick="">
+                <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
                     <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
                     <div class="div-titulo"><p class="titulo">Título3</p></div>
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card card-imagem" onclick="">
+                <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
                     <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
                     <div class="div-titulo"><p class="titulo">Título4</p></div>
                 </div>
             </div>
             <div class="col-sm">
-                <div class="card card-imagem" onclick="">
+                <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
                     <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
                     <div class="div-titulo"><p class="titulo">Título5</p></div>
                 </div>

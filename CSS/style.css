@@ -52,13 +52,18 @@
 }
 
 .imagem-perfil-personagem{
-    width: 360px;
+    width: 40%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 100%;
 }
 .div-personagem-detalhes{
     font-size: 15px;
-    position: relative;
-    top: -18px;
-    left: -10px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 30px;
 }
 
 .nav-detalhes-personagem{
@@ -69,11 +74,29 @@
 }
 
 .row-personagem-detalhes{
-    height: 500px;
-    width: 100%;
-    display: inline;
+    display: table;
 }
 .descricao-texto-personagem{
     margin-left: 50px;
     margin-right: 50px;
+    text-align: justify;
+}
+.row-cards{
+    margin-bottom: 30px;
+}
+.personagem-detalhes-card-dubladores{
+    height: 350px;
+    width: 225px;
+    display: table-cell;
+}
+.img-dubladores{
+    display: inline;
+    vertical-align: middle;
+    height: 100%;
+    margin-left: 25px;
+}
+.img-personagem{
+    width: 500px;
+    vertical-align: middle;
+    text-align: center;
 }
