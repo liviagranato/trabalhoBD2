@@ -15,7 +15,65 @@
     outline: none;
     box-shadow: none;
 }
+
 .titulo{
-    color: gold;
-    background-color: rgba(85, 85, 85, 0.62)!important;
+    color: white;
+    font-weight: 500;
+    vertical-align: middle;
+    display: inline;
+}
+.div-titulo{
+    background-color: rgba(85, 85, 85, 0.62);
+    opacity: 0.95;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    line-height: 1.1;
+    padding-left: 10px;
+    display: inline;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.card-imagem{
+    cursor: pointer;
+}
+
+.nav2{
+    margin-bottom: 20px;
+}
+.active{
+    background-color: rgba(224, 224, 224, 0.42);
+}
+
+.container2{
+    margin: 10px 20px 10px 20px;
+}
+
+.imagem-perfil-personagem{
+    width: 360px;
+}
+.div-personagem-detalhes{
+    font-size: 15px;
+    position: relative;
+    top: -18px;
+    left: -10px;
+}
+
+.nav-detalhes-personagem{
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    padding: 10px 0 10px 15px;
+}
+
+.row-personagem-detalhes{
+    height: 500px;
+    width: 100%;
+    display: inline;
+}
+.descricao-texto-personagem{
+    margin-left: 50px;
+    margin-right: 50px;
 }

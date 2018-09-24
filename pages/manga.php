@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -48,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="card-body row no-gutters align-items-center">
                         <!--end of col-->
                         <div class="col">
-                            <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Buscar Manga">
+                            <input class="form-control form-control-lg" type="search" placeholder="Buscar Manga">
                         </div>
                         <!--end of col-->
                         <div class="col-auto">
@@ -59,6 +60,72 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </form>
             </div>
             <!--end of col-->
+        </div>
+    </div>
+    <div class="container">
+        <div class="row row-cards">
+            <div class="col-sm">
+                <div class="card card-imagem" onclick="">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <div class="div-titulo"><p class="titulo">Título1</p></div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card card-imagem" onclick="">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <div class="div-titulo"><p class="titulo">Título2</p></div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card card-imagem" onclick="">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <div class="div-titulo"><p class="titulo">Título3</p></div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card card-imagem" onclick="">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <div class="div-titulo"><p class="titulo">Título4</p></div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card card-imagem" onclick="">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <div class="div-titulo"><p class="titulo">Título5</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card card-imagem" onclick="">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <div class="div-titulo"><p class="titulo">Título1</p></div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card card-imagem" onclick="">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <div class="div-titulo"><p class="titulo">Título2</p></div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card card-imagem" onclick="">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <div class="div-titulo"><p class="titulo">Título3</p></div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card card-imagem" onclick="">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <div class="div-titulo"><p class="titulo">Título4</p></div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card card-imagem" onclick="">
+                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
+                    <div class="div-titulo"><p class="titulo">Título5</p></div>
+                </div>
+            </div>
         </div>
     </div>
 <?php } ?>
