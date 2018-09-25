@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div class="div-personagem-detalhes">
-                <h3 class="my-3">Project Description</h3>
+                <h3 class="my-2">Curiosidades</h3>
                 Age: 18 <br/>
                 Birthday: May 28 <br/>
                 Height: 142 cm (4'8") <br/>
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
 
-        <h3 class="my-3">Project Details</h3>
+        <h3 class="my-3">Descrição</h3>
         <div class="row">
             <div class="descricao-texto-personagem">
                 Konata Izumi is, more by default than anything else, the "leader" of the main characters.
@@ -95,8 +95,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     that Kagami and Tsukasa are shrine maidens. Interestingly enough, her voice actress for the animated version, Aya Hirano and
                     Wendee Lee, is in fact the same person who voiced Haruhi Suzumiya in The Melancholy of Haruhi Suzumiya anime; other voice actors
                     from the same series make guest appearances during the course of Lucky ☆ Star.
-                    Since she spends quite a large sum of money on video games and doujinshi, Konata was lucky enough to get a part-time job at a cosplay cafe. Continuing with her theme of playing video games, Konata plays the role of a male character in an online game and is married in that world. Her significant other in the game is coincidently a male gamer using a female character. She often plays late into the night, hence why she tends to fall asleep in class, which makes her a frequent victim to her homeroom teacher, Nanako Kuroi. One of her talents as mentioned on the show is that she can name all the Pok$#!ns
-                    Her physique is smaller than average when compared to her peers, which she claims hasn't changed, since she was in the sixth grade. She is ambidextrous, in contrast to the mostly left-handed main cast. She has long, blue hair which comes down to her calves with a large ahoge, sleepy eyes and a beauty mark under her left eye, just like her father. Her mother, Kanata Izumi, died when she was an infant, and she has lived alone with her father since. In her third year of high school, however, her cousin, Yutaka Kobayakawa, came to live at her house, giving a total of three people in the Izumi residence.
+                    <br/><br/>Since she spends quite a large sum of money on video games and doujinshi, Konata was lucky enough to get a part-time job at a cosplay cafe. Continuing with her theme of playing video games, Konata plays the role of a male character in an online game and is married in that world. Her significant other in the game is coincidently a male gamer using a female character. She often plays late into the night, hence why she tends to fall asleep in class, which makes her a frequent victim to her homeroom teacher, Nanako Kuroi. One of her talents as mentioned on the show is that she can name all the Pok$#!ns
+                    <br/><br/>Her physique is smaller than average when compared to her peers, which she claims hasn't changed, since she was in the sixth grade. She is ambidextrous, in contrast to the mostly left-handed main cast. She has long, blue hair which comes down to her calves with a large ahoge, sleepy eyes and a beauty mark under her left eye, just like her father. Her mother, Kanata Izumi, died when she was an infant, and she has lived alone with her father since. In her third year of high school, however, her cousin, Yutaka Kobayakawa, came to live at her house, giving a total of three people in the Izumi residence.
             </div>
         </div>
 

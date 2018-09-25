@@ -48,30 +48,59 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Portfolio Item Heading -->
     <h1 class="my-4">Lucky Star</h1>
-    <div class="row row-personagem-detalhes">
-        <div class="col-md-2 col-sm-6 mb-4 imagem-perfil-personagem">
+    <div class="row info-cell">
+        <div class="info-cell-row col-md-9 col-md-push-3">
+            <div class="row">
+                <div class="col-xs-8 col-sm-3">
+                    <b>SCORE</b>
+                    <div class="text-score">7.82</div>
+                    <div class="text-users">193,339 users</div>
+                </div>
+                <div class="col-xs-8 col-sm-3">Ranked <b>#850</b></div>
+                <div class="col-xs-8 col-sm-3">Popularity <b>#142</b></div>
+                <div class="col-xs-8 col-sm-3">Members <b>393,186</b></div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-anime-detalhes">
+
+        <div class="imagem-perfil-anime">
             <a href="#">
                 <img class="img-fluid"  src="../resource/lucky-star.jpg" alt="">
             </a>
         </div>
 
-        <div class="div-personagem-detalhes">
-            <h3 class="my-3">Project Description</h3>
-            Age: 18 <br/>
-            Birthday: May 28 <br/>
-            Height: 142 cm (4'8") <br/>
-            Handedness: Ambidextrous <br/>
-            Zodiac Sign: Gemini <br/>
-            Residence: Satte, Saitama Prefecture <br/>
-            Blood type: A <br/>
-            Strong Subjects: PE (However, it is not her favorite subject) <br/>
-            Disliked Subjects: Math, Science <br/>
-            Favorite Food: Choco Cornet, Curry, Noodles <br/>
-            Favorite Color: Red <br/>
-            Hair Color: Blue <br/>
-            Eye Color: Green <br/>
-            Online Name: Konakona <br/>
-            <b>Member Favorites: 14,226</b> <br/>
+        <div class="div-informacao-anime">
+            <h3 class="my-3">Informação</h3>
+            Type: TV<br/>
+            Episodes: 24<br/>
+            Status: Finished Airing<br/>
+            Aired: Apr 8, 2007 to Sep 17, 2007<br/>
+            Premiered: Spring 2007<br/>
+            Broadcast: Mondays at 00:00 (JST)<br/>
+            Producers: Lantis, Rakuonsha, Lucky Paradise<br/>
+            Licensors: Funimation, Bandai Entertainment, Kadokawa Pictures USA<br/>
+            Studios: Kyoto Animation<br/>
+            Source: 4-koma manga<br/>
+            Genres: Slice of Life, Comedy, Parody, School<br/>
+            Duration: 24 min. per ep.<br/>
+            Rating: PG-13 - Teens 13 or older<br/>
+        </div>
+
+        <div class="div-estatisticas-anime">
+            <h3 class="my-3">Estatísticas</h3>
+            Score: 7.821 (scored by 193,339 users)<br/>
+            Ranked: #8502<br/>
+            Popularity: #142<br/>
+            Members: 393,183<br/>
+            Favorites: 9,816<br/>
+
+            <h3 class="my-3">Títulos Alternativos</h3>
+            English: Lucky☆Star<br/>
+            Synonyms: Lucky Star<br/>
+            Japanese: らき☆すた<br/>
+
+
         </div>
     </div>
 
@@ -81,39 +110,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             Lucky☆Star follows the daily lives of four cute high school girls—Konata Izumi,
             the lazy otaku; the Hiiragi twins, Tsukasa and Kagami (sugar and spice, respectively);
             and the smart and well-mannered Miyuki Takara.
-            As they go about their lives at school and beyond, they develop their eccentric and lively friendship
+            <br/><br/>As they go about their lives at school and beyond, they develop their eccentric and lively friendship
             and making humorous observations about the world around them. Be it Japanese tradition, the intricacies
             of otaku culture, academics, or the correct way of preparing and eating various foods—no subject is safe from their musings.
             </div>
     </div>
 
-    <h3 class="my-4">Dubladores</h3>
-    <div class="row img-dubladores">
-        <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
-            <a href="#">
-                <img class="img-fluid" src="../resource/dubladora1.jpg" alt="">
-            </a>
-            <div>
-                <h3>Hirano, Aya</h3>
-                <p>Japanese</p>
+    <h3 class="my-4">Dubladores Idioma Original</h3>
+        <div class="card card-dubladores">
+            <div class="card-body card-espacamento">
+                <div class="left">
+                    <img class="img-dubladores-card left" src="../resource/konata-perfil.jpg">
+                    <div class="img-dubladores-text">Izumi, Konata</div>
+                </div>
+                <div class="right">
+                    <img class="img-dubladores-card right" src="../resource/dubladora1.jpg">
+                    <div class="img-dubladores-text">Hirano, Aya</div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
-            <a href="#">
-                <img class="img-fluid" src="../resource/dubladora.jpg" alt="">
-            </a>
-            <div>
-                <h3>Lee, Wendee</h3>
-                <p>English</p>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
-            <a href="#">
-                <img class="img-fluid" src="../resource/dubladora2.jpg" alt="">
-            </a>
-            <div>
-                <h3>Jeong, Yu Mi</h3>
-                <p>Korean</p>
+            <div class="card-body card-espacamento">
+                <div class="left">
+                    <img class="img-dubladores-card left" src="../resource/konata-perfil.jpg">
+                    <div class="img-dubladores-text">Izumi, Konata</div>
+                </div>
+                <div class="right">
+                    <img class="img-dubladores-card right" src="../resource/dubladora1.jpg">
+                    <div class="img-dubladores-text">Hirano, Aya</div>
+                </div>
             </div>
         </div>
     </div>
