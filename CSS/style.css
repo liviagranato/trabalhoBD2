@@ -8,6 +8,12 @@
 .left{
     float: left;
 }
+.left_align{
+    text-align: left;
+}
+.right-align{
+    text-align: right;
+}
 
 .center{
     text-align: center;
@@ -109,17 +115,13 @@
     height: 100%;
     margin-left: 25px;
 }
-.img-personagem{
-    width: 500px;
-    vertical-align: middle;
-    text-align: center;
-}
+
 .div-estatisticas-anime{
     font-size: 15px;
     display: table-cell;
     vertical-align: top;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 50px;
 }
 
 .div-informacao-anime{
@@ -127,7 +129,7 @@
     display: table-cell;
     vertical-align: middle;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 50px;
 }
 
 .row-anime-detalhes{
@@ -135,6 +137,14 @@
     display: table-cell;
     vertical-align: middle;
     text-align: left;
+}
+
+.anime-detalhe-info-principal{
+    display: table;
+}
+.anime-detalhe-info-principal-cell{
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .imagem-perfil-anime{
@@ -169,16 +179,14 @@
 }
 .card-dubladores{
     display: table;
-    width: 300px;
-    margin-bottom: 30px;
 }
 .img-dubladores-card{
     width: 30px;
     height: auto;
 }
 .card-espacamento{
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 .img-dubladores-text{
 

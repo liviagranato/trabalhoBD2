@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <h3 class="my-3">Descrição</h3>
         <div class="row">
-            <div class="descricao-texto-personagem">
+            <div class="descricao-texto-personagem" id="descricao-personagem">
                 Konata Izumi is, more by default than anything else, the "leader" of the main characters.
                     Nicknamed "Kona-chan" by her friends, she is an eccentric but friendly and outgoing girl,
                     with a mischeivous but good-natured sense of humor. She can be smart, but she hates studying,

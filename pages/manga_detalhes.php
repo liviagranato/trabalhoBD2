@@ -42,23 +42,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else { ?>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <nav class="nav">
-    <a class="nav-detalhes-personagem">Detalhes do Anime</a>
+    <a class="nav-detalhes-personagem">Detalhes do Manga</a>
 </nav>
 <div class="container">
 
     <!-- Portfolio Item Heading -->
-    <h1 class="my-4">Lucky Star</h1>
+    <h1 class="my-4">Berserk</h1>
     <div class="row info-cell">
         <div class="info-cell-row col-md-9 col-md-push-3">
             <div class="row">
                 <div class="col">
                     <b>SCORE</b>
-                    <div class="text-score">7.82</div>
-                    <div class="text-users">193,339 users</div>
+                    <div class="text-score">9.31</div>
+                    <div class="text-users">95.962 users</div>
                 </div>
-                <div class="col ">Ranked <b>#850</b></div>
-                <div class="col ">Popularity <b>#142</b></div>
-                <div class="col ">Members <b>393,186</b></div>
+                <div class="col ">Ranked <b>#1</b></div>
+                <div class="col ">Popularity <b>#6</b></div>
+                <div class="col ">Members <b>203,913</b></div>
             </div>
         </div>
     </div>
@@ -72,34 +72,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div class="div-informacao-anime">
             <h3 class="my-3">Informação</h3>
-            Type: TV<br/>
-            Episodes: 24<br/>
-            Status: Finished Airing<br/>
-            Aired: Apr 8, 2007 to Sep 17, 2007<br/>
-            Premiered: Spring 2007<br/>
-            Broadcast: Mondays at 00:00 (JST)<br/>
-            Producers: Lantis, Rakuonsha, Lucky Paradise<br/>
-            Licensors: Funimation, Bandai Entertainment, Kadokawa Pictures USA<br/>
-            Studios: Kyoto Animation<br/>
-            Source: 4-koma manga<br/>
-            Genres: Slice of Life, Comedy, Parody, School<br/>
-            Duration: 24 min. per ep.<br/>
-            Rating: PG-13 - Teens 13 or older<br/>
+            Type: Manga<br/>
+            Volumes: Unknown<br/>
+            Chapters: Unknown<br/>
+            Status: Publishing<br/>
+            Published: Aug 25, 1989 to ?<br/>
+            Genres: Action, Adventure, Demons, Drama, Fantasy, Horror, Supernatural, Military, Psychological, Seinen<br/>
+            Authors: Miura, Kentarou (Story & Art)<br/>
+            Serialization: Young Animal<br/>
         </div>
 
         <div class="div-estatisticas-anime">
             <h3 class="my-3">Estatísticas</h3>
-            Score: 7.821 (scored by 193,339 users)<br/>
-            Ranked: #8502<br/>
-            Popularity: #142<br/>
-            Members: 393,183<br/>
-            Favorites: 9,816<br/>
+            Score: 9.311 (scored by 95962 users)Ranked: #12<br/>
+            Popularity: #6<br/>
+            Members: 203,913<br/>
+            Favorites: 44,358<br/>
 
             <h3 class="my-3">Títulos Alternativos</h3>
-            English: Lucky☆Star<br/>
-            Synonyms: Lucky Star<br/>
-            Japanese: らき☆すた<br/>
-
+            English: Berserk<br/>
+            Synonyms: Berserk: The Prototype<br/>
+            Japanese: ベルセルク<br/>
 
         </div>
     </div>
@@ -107,13 +100,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h3 class="my-3">Sinopse</h3>
     <div class="row">
         <div class="descricao-texto-personagem">
-            Lucky☆Star follows the daily lives of four cute high school girls—Konata Izumi,
-            the lazy otaku; the Hiiragi twins, Tsukasa and Kagami (sugar and spice, respectively);
-            and the smart and well-mannered Miyuki Takara.
-            <br/><br/>As they go about their lives at school and beyond, they develop their eccentric and lively friendship
-            and making humorous observations about the world around them. Be it Japanese tradition, the intricacies
-            of otaku culture, academics, or the correct way of preparing and eating various foods—no subject is safe from their musings.
-            </div>
+            Guts, a former mercenary now known as the "Black Swordsman," is out for revenge. After a tumultuous childhood,
+            he finally finds someone he respects and believes he can trust, only to have everything fall apart when this person takes
+            away everything important to Guts for the purpose of fulfilling his own desires.
+            Now marked for death, Guts becomes condemned to a fate in which he is relentlessly pursued by demonic beings.
+            <br/>Setting out on a dreadful quest riddled with misfortune, Guts, armed with a massive sword and monstrous strength,
+            will let nothing stop him, not even death itself,
+            until he is finally able to take the head of the one who stripped him—and his loved one—of their humanity.
+            <br/>
+            <b>Included one-shot:</b>
+            Volume 14: Berserk: The Prototype
+        </div>
     </div>
 
     <h3 class="my-4">Dubladores Idioma Original</h3>
@@ -194,7 +191,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     <div class="left">
-    <h3 class="my-3">Tema de Abertura</h3>
+        <h3 class="my-3">Tema de Abertura</h3>
         <div class="row">
             <div class="descricao-texto-personagem">
                 "Motteke! Sailor Fuku" by Aya Hirano, Emiri Katou, Kaori Fukuhara & Aya Endou
@@ -217,13 +214,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
     <div class="right">
-        <h3 class="my-3">Animes Relacionados</h3>
+        <h3 class="my-3">Mangas Relacionados</h3>
         <div class="row">
             <div class="descricao-texto-personagem">
-                Adaptation:	Lucky☆Star<br/>
-                Character:	Anime Tenchou<br/>
-                Sequel:	Lucky☆Star: Original na Visual to Animation<br/>
-                Spin-off:	Miyakawa-ke no Kuufuku<br/>
+                Other:	Berserk: Shinen no Kami 2, Berserk: Honou Ryuu no Kishi
+                <br/>Adaptation:	Berserk: Ougon Jidai-hen II - Doldrey Kouryaku, Berserk: Ougon Jidai-hen I - Haou no Tamago, Berserk: Ougon Jidai-hen III - Kourin, Kenpuu Denki Berserk, Berserk, Berserk 2nd Season
             </div>
         </div>
     </div>
