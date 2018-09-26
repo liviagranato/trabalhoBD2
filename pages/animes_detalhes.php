@@ -213,6 +213,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 #08: "Monkey Magic" by Aya Hirano (ep 8)<br/>
                 #09: "Kogarashi ni Dakarete (木枯しに抱かれて)" by Aya Hirano (ep 9)<br/>
                 #10: "I'm Proud" by Emiri Kato (ep 10)<br/>
+                <br/><br/><br/>
             </div>
         </div>
     </div>
@@ -223,11 +224,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 Adaptation:	Lucky☆Star<br/>
                 Character:	Anime Tenchou<br/>
                 Sequel:	Lucky☆Star: Original na Visual to Animation<br/>
-                Spin-off:	Miyakawa-ke no Kuufuku<br/>
+                Spin-off:	Miyakawa-ke no Kuufuku
+
             </div>
         </div>
     </div>
-    <br/><br/><br/><br/>
+
     <?php } ?>
 </body>
 </html>

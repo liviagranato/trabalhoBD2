@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="text-score">9.31</div>
                     <div class="text-users">95.962 users</div>
                 </div>
-                <div class="col ">Ranked <b>#1</b></div>
+                <div class="col  ">Ranked <b>#1</b></div>
                 <div class="col ">Popularity <b>#6</b></div>
                 <div class="col ">Members <b>203,913</b></div>
             </div>
@@ -64,13 +64,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <div class="row row-anime-detalhes">
 
-        <div class="imagem-perfil-anime">
+        <div class="imagem-perfil-manga">
             <a href="#">
-                <img class="img-fluid"  src="../resource/lucky-star.jpg" alt="">
+                <img class="img-fluid"  src="../resource/berserk_manga.jpg" alt="">
             </a>
         </div>
 
-        <div class="div-informacao-anime">
+        <div class="div-informacao-manga">
             <h3 class="my-3">Informação</h3>
             Type: Manga<br/>
             Volumes: Unknown<br/>
@@ -82,9 +82,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             Serialization: Young Animal<br/>
         </div>
 
-        <div class="div-estatisticas-anime">
+        <div class="div-estatisticas-manga">
             <h3 class="my-3">Estatísticas</h3>
-            Score: 9.311 (scored by 95962 users)Ranked: #12<br/>
+            Score: 9.311 (scored by 95962 users)<br/>
+            Ranked: #12<br/>
             Popularity: #6<br/>
             Members: 203,913<br/>
             Favorites: 44,358<br/>
@@ -107,122 +108,69 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <br/>Setting out on a dreadful quest riddled with misfortune, Guts, armed with a massive sword and monstrous strength,
             will let nothing stop him, not even death itself,
             until he is finally able to take the head of the one who stripped him—and his loved one—of their humanity.
-            <br/>
+            <br/><br/>
             <b>Included one-shot:</b>
-            Volume 14: Berserk: The Prototype
+            <br/>Volume 14: Berserk: The Prototype
         </div>
     </div>
 
-    <h3 class="my-4">Dubladores Idioma Original</h3>
+    <h3 class="my-4">Personagens Principais</h3>
     <table class="table table-striped card-dubladores">
         <tbody>
         <tr>
             <td>
                 <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/konata-perfil.jpg">
-                    <div class="img-dubladores-text">Izumi, Konata</div>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img class="img-dubladores-card right card-espacamento" src="../resource/dubladora1.jpg">
-                    <div class="img-dubladores-text right">Hirano, Aya</div>
+                    <img class="img-dubladores-card left card-espacamento" src="../resource/puck.jpg">
+                    <div class="img-dubladores-text">Guts</div>
                 </div>
             </td>
         </tr>
         <tr>
             <td>
                 <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/kagami.jpg">
-                    <div class="img-dubladores-text">Hiiragi, Kagami</div>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img class="img-dubladores-card right card-espacamento" src="../resource/katou_dubl.jpg">
-                    <div class="img-dubladores-text right">Katou, Emiri</div>
+                    <img class="img-dubladores-card left card-espacamento" src="../resource/griffith.jpg">
+                    <div class="img-dubladores-text">Griffith</div>
                 </div>
             </td>
         </tr>
         <tr>
             <td >
                 <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/tsukasa.jpg">
-                    <div class="img-dubladores-text">Hiiragi, Tsukasa</div>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img class="img-dubladores-card right card-espacamento" src="../resource/fukuhara_dubl.jpg">
-                    <div class="img-dubladores-text right">Fukuhara, Kaori</div>
+                    <img class="img-dubladores-card left card-espacamento" src="../resource/casca.jpg">
+                    <div class="img-dubladores-text">Casca</div>
                 </div>
             </td>
         </tr>
         <tr>
             <td>
                 <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/miyumi.jpg">
-                    <div class="img-dubladores-text">Takara, Miyuki</div>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img class="img-dubladores-card right card-espacamento" src="../resource/endou_dubl.jpg">
-                    <div class="img-dubladores-text right">Endou, Aya</div>
+                    <img class="img-dubladores-card left card-espacamento" src="../resource/schierke.jpg">
+                    <div class="img-dubladores-text">Schierke</div>
                 </div>
             </td>
         </tr>
         <tr>
             <td >
                 <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/akira.jpg">
-                    <div class="img-dubladores-text">Kogami, Akira</div>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img class="img-dubladores-card right card-espacamento" src="../resource/konno_dubl.jpg">
-                    <div class="img-dubladores-text right">Konno, Hiromi</div>
+                    <img class="img-dubladores-card left card-espacamento" src="../resource/puck.jpg">
+                    <div class="img-dubladores-text">Puck</div>
                 </div>
             </td>
         </tr>
         </tbody>
     </table>
 
-
-    <div class="left">
-        <h3 class="my-3">Tema de Abertura</h3>
-        <div class="row">
-            <div class="descricao-texto-personagem">
-                "Motteke! Sailor Fuku" by Aya Hirano, Emiri Katou, Kaori Fukuhara & Aya Endou
-            </div>
-        </div>
-        <h3 class="my-3">Tema de Encerramento</h3>
-        <div class="row">
-            <div class="descricao-texto-personagem">
-                #01: "Uchuu Tetsujin Kyoodain (宇宙鉄人キョーダイン)" by Aya Hirano (ep 1) <br/>
-                #02: "Shouri da! Akumaizer 3 (勝利だ!アクマイザー3)" by Aya Hirano (ep 2)<br/>
-                #03: "Sore ga, Ai Deshou (それが, 愛でしょう)" by Aya Hirano (ep 3)<br/>
-                #04: "Sailor Fuku to Kikanjuu (セーラー服と機関銃)" by Emiri Kato (ep 4)<br/>
-                #05: "Cha-La Head-Cha-La" by Aya Hirano (ep 5)<br/>
-                #06: "Valentine Kiss (バレンタイン・キッス)" by Kaori Fukuhara (ep 6)<br/>
-                #07: "Chijou no Hoshi (地上の星)" by Aya Endo (ep 7)<br/>
-                #08: "Monkey Magic" by Aya Hirano (ep 8)<br/>
-                #09: "Kogarashi ni Dakarete (木枯しに抱かれて)" by Aya Hirano (ep 9)<br/>
-                #10: "I'm Proud" by Emiri Kato (ep 10)<br/>
-            </div>
-        </div>
-    </div>
     <div class="right">
         <h3 class="my-3">Mangas Relacionados</h3>
         <div class="row">
             <div class="descricao-texto-personagem">
                 Other:	Berserk: Shinen no Kami 2, Berserk: Honou Ryuu no Kishi
                 <br/>Adaptation:	Berserk: Ougon Jidai-hen II - Doldrey Kouryaku, Berserk: Ougon Jidai-hen I - Haou no Tamago, Berserk: Ougon Jidai-hen III - Kourin, Kenpuu Denki Berserk, Berserk, Berserk 2nd Season
+            <br/><br/><br/><br/>
             </div>
         </div>
     </div>
-    <br/><br/><br/><br/>
+    <br/>
     <?php } ?>
 </body>
 </html>

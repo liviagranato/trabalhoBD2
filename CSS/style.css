@@ -122,14 +122,16 @@
     vertical-align: top;
     text-align: left;
     padding-left: 50px;
+    width:450px;
 }
 
 .div-informacao-anime{
     font-size: 15px;
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: top;
     text-align: left;
     padding-left: 50px;
+    width:450px;
 }
 
 .row-anime-detalhes{
@@ -137,6 +139,7 @@
     display: table-cell;
     vertical-align: middle;
     text-align: left;
+
 }
 
 .anime-detalhe-info-principal{
@@ -188,6 +191,26 @@
     margin-right: 5px;
     margin-left: 5px;
 }
-.img-dubladores-text{
-
+.div-informacao-manga{
+    font-size: 15px;
+    display: table-cell;
+    vertical-align: top;
+    text-align: left;
+    padding-left: 50px;
+    width:450px;
+}
+.div-estatisticas-manga{
+    font-size: 15px;
+    display: table-cell;
+    vertical-align: top;
+    text-align: left;
+    padding-left: 50px;
+    width:450px;
+}
+.imagem-perfil-manga{
+    width: 30%;
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    text-align: center;
 }

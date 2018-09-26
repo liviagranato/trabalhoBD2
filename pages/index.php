@@ -17,7 +17,7 @@ require_once "../vendor/autoload.php"; // require your composer autoloader file 
 
 $jikan = new Jikan\Jikan;
 
-for ($i=1; $i<1000; $i++){
+/*for ($i=1; $i<1000; $i++){
     var_dump($jikan->Anime($i)->response); // get anime with ID 1 on MAL
     var_dump($jikan->Manga($i)->response); // get manga with ID 1 on MAL
       try {
@@ -28,7 +28,7 @@ for ($i=1; $i<1000; $i++){
     } catch (Exception $e) {
         echo 'Caught exception: ', $e->getMessage(); // "File does not exist" (the anime with this ID doesn't exist on MAL)
     }
-}
+}*/
 ?>
 
 <div>
