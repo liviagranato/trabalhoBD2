@@ -12,14 +12,15 @@
 </head>
 <body>
 <?php include 'navbar.php';?>
+
 <nav class="nav nav2">
-    <a class="nav-link active" href="#">Segunda</a>
-    <a class="nav-link" href="#">Terça</a>
-    <a class="nav-link" href="#">Quarta</a>
-    <a class="nav-link" href="#">Quinta</a>
-    <a class="nav-link" href="#">Sexta</a>
-    <a class="nav-link" href="#">Sábado</a>
-    <a class="nav-link" href="#">Domingo</a>
+    <a class="nav-link " href="#" onclick="atualizaCronograma('Mon')">Segunda</a>
+    <a class="nav-link" href="#" onclick="atualizaCronograma('Tue')">Terça</a>
+    <a class="nav-link" href="#" onclick="atualizaCronograma('Wed')">Quarta</a>
+    <a class="nav-link" href="#" onclick="atualizaCronograma('Thi')">Quinta</a>
+    <a class="nav-link" href="#" onclick="atualizaCronograma('Fri')">Sexta</a>
+    <a class="nav-link" href="#" onclick="atualizaCronograma('Sat')">Sábado</a>
+    <a class="nav-link" href="#" onclick="atualizaCronograma('Mon')">Domingo</a>
 </nav>
 <div class="container2">
     <div class="row row-cards">
@@ -101,6 +102,13 @@
     </div>
 </div>
 
+<?php
+function atualizaCronograma($dia){
+
+}
+
+
+?>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

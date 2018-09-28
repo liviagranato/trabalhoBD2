@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4275a9ed-5ee7-4b06-abd3-1bc6b2f2be85" name="Default Changelist" comment="" />
+    <list default="true" id="4275a9ed-5ee7-4b06-abd3-1bc6b2f2be85" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/conexao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/anime.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/anime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/animes_detalhes.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/animes_detalhes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/cronograma.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/cronograma.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/manga.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/manga.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/manga_detalhes.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/manga_detalhes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/personagem.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/personagem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/personagem_detalhes.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/personagem_detalhes.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,6 +22,20 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1702407625">
@@ -48,22 +74,24 @@
     <session id="-1325131800">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.47" value="1" />
+          <entry key="project.open.time.50" value="1" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.55" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="7" />
           <entry key="jpg" value="3" />
-          <entry key="json" value="2" />
-          <entry key="php" value="106" />
+          <entry key="json" value="3" />
+          <entry key="php" value="128" />
           <entry key="rnc" value="1" />
           <entry key="txt" value="2" />
         </counts>
@@ -72,22 +100,23 @@
         <counts>
           <entry key="CSS" value="7" />
           <entry key="Image" value="3" />
-          <entry key="JSON" value="2" />
-          <entry key="PHP" value="106" />
+          <entry key="JSON" value="3" />
+          <entry key="PHP" value="128" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="RNG Compact" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="3275" />
-          <entry key="php" value="4630" />
+          <entry key="css" value="3353" />
+          <entry key="php" value="7903" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="3275" />
-          <entry key="PHP" value="4630" />
+          <entry key="CSS" value="3353" />
+          <entry key="HTML" value="62" />
+          <entry key="PHP" value="7841" />
         </counts>
       </usages-collector>
     </session>
@@ -97,17 +126,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CSS/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            <state relative-caret-position="187">
+              <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/personagem_detalhes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="871">
+              <caret line="70" column="61" lean-forward="true" selection-start-line="70" selection-start-column="61" selection-end-line="70" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/animes_detalhes.php">
+        <entry file="file://$PROJECT_DIR$/pages/cronograma.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-442">
-              <caret line="58" column="21" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="21" />
+            <state relative-caret-position="140">
+              <caret line="27" column="81" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -115,8 +153,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/manga_detalhes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
+            <state relative-caret-position="-2141">
+              <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -150,19 +197,20 @@
         <option value="$PROJECT_DIR$/pages/navbar.php" />
         <option value="$PROJECT_DIR$/pages/ranking.php" />
         <option value="$PROJECT_DIR$/pages/login.php" />
-        <option value="$PROJECT_DIR$/pages/personagem.php" />
         <option value="$PROJECT_DIR$/pages/detalhes_animes.php" />
-        <option value="$PROJECT_DIR$/pages/anime.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/pages/personagem_detalhes.php" />
-        <option value="$PROJECT_DIR$/pages/manga.php" />
         <option value="$PROJECT_DIR$/pages/footer.php" />
-        <option value="$PROJECT_DIR$/CSS/style.css" />
         <option value="$PROJECT_DIR$/pages/temporada.php" />
-        <option value="$PROJECT_DIR$/pages/cronograma.php" />
-        <option value="$PROJECT_DIR$/pages/index.php" />
-        <option value="$PROJECT_DIR$/pages/manga_detalhes.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/pages/conexao.php" />
+        <option value="$PROJECT_DIR$/CSS/style.css" />
+        <option value="$PROJECT_DIR$/pages/anime.php" />
         <option value="$PROJECT_DIR$/pages/animes_detalhes.php" />
+        <option value="$PROJECT_DIR$/pages/manga_detalhes.php" />
+        <option value="$PROJECT_DIR$/pages/personagem.php" />
+        <option value="$PROJECT_DIR$/pages/manga.php" />
+        <option value="$PROJECT_DIR$/pages/personagem_detalhes.php" />
+        <option value="$PROJECT_DIR$/pages/index.php" />
+        <option value="$PROJECT_DIR$/pages/cronograma.php" />
       </list>
     </option>
   </component>
@@ -226,19 +274,6 @@
               <item name="trabalho" type="b2602c69:ProjectViewProjectNode" />
               <item name="trabalho" type="462c0819:PsiDirectoryNode" />
               <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="guzzlehttp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trabalho" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trabalho" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="guzzlehttp" type="462c0819:PsiDirectoryNode" />
-              <item name="guzzle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trabalho" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trabalho" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
               <item name="jikan-me" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -247,22 +282,6 @@
               <item name="vendor" type="462c0819:PsiDirectoryNode" />
               <item name="jikan-me" type="462c0819:PsiDirectoryNode" />
               <item name="jikan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trabalho" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trabalho" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="jikan-me" type="462c0819:PsiDirectoryNode" />
-              <item name="jikan" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trabalho" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trabalho" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="jikan-me" type="462c0819:PsiDirectoryNode" />
-              <item name="jikan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -310,16 +329,19 @@
       <workItem from="1537812312386" duration="6485000" />
       <workItem from="1537833579542" duration="7412000" />
       <workItem from="1537906815409" duration="16072000" />
+      <workItem from="1538010906358" duration="1531000" />
+      <workItem from="1538092644939" duration="18637000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59897000" />
+    <option name="totallyTimeSpent" value="80065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2246596" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21482602" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -440,19 +462,6 @@
         <state relative-caret-position="-6732" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/jikan-me/jikan/examples/character.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/jikan-me/jikan/examples/manga.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/jikan-me/jikan/examples/person.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/jikan-me/jikan/examples/schedule.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -466,9 +475,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-237" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/jikan-me/jikan/examples/anime.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/jikan-me/jikan/src/Get/Get.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -507,52 +513,12 @@
         <state relative-caret-position="-918" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/personagem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1554">
-          <caret line="111" column="101" selection-start-line="111" selection-start-column="55" selection-end-line="111" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/jikan-me/jikan/src/Get/Anime.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2277" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/manga.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="123" column="97" selection-start-line="123" selection-start-column="97" selection-end-line="123" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/footer.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/personagem_detalhes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1526">
-          <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/anime.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="105" column="97" lean-forward="true" selection-start-line="105" selection-start-column="46" selection-end-line="105" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/footer.php" />
     <entry file="file://$PROJECT_DIR$/pages/temporada.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -560,31 +526,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/cronograma.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="26" column="94" selection-start-line="26" selection-start-column="94" selection-end-line="26" selection-end-column="94" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/CSS/style.css">
+    <entry file="file://$PROJECT_DIR$/pages/conexao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/manga_detalhes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/animes_detalhes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-442">
-          <caret line="58" column="21" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="21" />
+        <state relative-caret-position="2792">
+          <caret line="259" column="41" lean-forward="true" selection-start-line="259" selection-start-column="41" selection-end-line="259" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/personagem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/anime.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="82" column="40" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/manga.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="77" column="39" lean-forward="true" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jikan-me/jikan/examples/anime.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jikan-me/jikan/examples/character.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jikan-me/jikan/examples/manga.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/jikan-me/jikan/examples/person.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/manga_detalhes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2141">
+          <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/personagem_detalhes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="871">
+          <caret line="70" column="61" lean-forward="true" selection-start-line="70" selection-start-column="61" selection-end-line="70" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/cronograma.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="27" column="81" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
         </state>
       </provider>
     </entry>

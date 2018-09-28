@@ -44,193 +44,211 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <nav class="nav">
     <a class="nav-detalhes-personagem">Detalhes do Anime</a>
 </nav>
-<div class="container">
-
-    <!-- Portfolio Item Heading -->
-    <h1 class="my-4">Lucky Star</h1>
-    <div class="row info-cell">
-        <div class="info-cell-row col-md-9 col-md-push-3">
-            <div class="row">
-                <div class="col">
-                    <b>SCORE</b>
-                    <div class="text-score">7.82</div>
-                    <div class="text-users">193,339 users</div>
-                </div>
-                <div class="col ">Ranked <b>#850</b></div>
-                <div class="col ">Popularity <b>#142</b></div>
-                <div class="col ">Members <b>393,186</b></div>
-            </div>
-        </div>
-    </div>
-    <div class="row row-anime-detalhes">
-
-        <div class="imagem-perfil-anime">
-            <a href="#">
-                <img class="img-fluid"  src="../resource/lucky-star.jpg" alt="">
-            </a>
-        </div>
-
-        <div class="div-informacao-anime">
-            <h3 class="my-3">Informação</h3>
-            Type: TV<br/>
-            Episodes: 24<br/>
-            Status: Finished Airing<br/>
-            Aired: Apr 8, 2007 to Sep 17, 2007<br/>
-            Premiered: Spring 2007<br/>
-            Broadcast: Mondays at 00:00 (JST)<br/>
-            Producers: Lantis, Rakuonsha, Lucky Paradise<br/>
-            Licensors: Funimation, Bandai Entertainment, Kadokawa Pictures USA<br/>
-            Studios: Kyoto Animation<br/>
-            Source: 4-koma manga<br/>
-            Genres: Slice of Life, Comedy, Parody, School<br/>
-            Duration: 24 min. per ep.<br/>
-            Rating: PG-13 - Teens 13 or older<br/>
-        </div>
-
-        <div class="div-estatisticas-anime">
-            <h3 class="my-3">Estatísticas</h3>
-            Score: 7.821 (scored by 193,339 users)<br/>
-            Ranked: #8502<br/>
-            Popularity: #142<br/>
-            Members: 393,183<br/>
-            Favorites: 9,816<br/>
-
-            <h3 class="my-3">Títulos Alternativos</h3>
-            English: Lucky☆Star<br/>
-            Synonyms: Lucky Star<br/>
-            Japanese: らき☆すた<br/>
 
 
-        </div>
-    </div>
-
-    <h3 class="my-3">Sinopse</h3>
-    <div class="row">
-        <div class="descricao-texto-personagem">
-            Lucky☆Star follows the daily lives of four cute high school girls—Konata Izumi,
-            the lazy otaku; the Hiiragi twins, Tsukasa and Kagami (sugar and spice, respectively);
-            and the smart and well-mannered Miyuki Takara.
-            <br/><br/>As they go about their lives at school and beyond, they develop their eccentric and lively friendship
-            and making humorous observations about the world around them. Be it Japanese tradition, the intricacies
-            of otaku culture, academics, or the correct way of preparing and eating various foods—no subject is safe from their musings.
-            </div>
-    </div>
-
-    <h3 class="my-4">Dubladores Idioma Original</h3>
-    <table class="table table-striped card-dubladores">
-        <tbody>
-        <tr>
-            <td>
-                <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/konata-perfil.jpg">
-                    <div class="img-dubladores-text">Izumi, Konata</div>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img class="img-dubladores-card right card-espacamento" src="../resource/dubladora1.jpg">
-                    <div class="img-dubladores-text right">Hirano, Aya</div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/kagami.jpg">
-                    <div class="img-dubladores-text">Hiiragi, Kagami</div>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img class="img-dubladores-card right card-espacamento" src="../resource/katou_dubl.jpg">
-                    <div class="img-dubladores-text right">Katou, Emiri</div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/tsukasa.jpg">
-                    <div class="img-dubladores-text">Hiiragi, Tsukasa</div>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img class="img-dubladores-card right card-espacamento" src="../resource/fukuhara_dubl.jpg">
-                    <div class="img-dubladores-text right">Fukuhara, Kaori</div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/miyumi.jpg">
-                    <div class="img-dubladores-text">Takara, Miyuki</div>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img class="img-dubladores-card right card-espacamento" src="../resource/endou_dubl.jpg">
-                    <div class="img-dubladores-text right">Endou, Aya</div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/akira.jpg">
-                    <div class="img-dubladores-text">Kogami, Akira</div>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img class="img-dubladores-card right card-espacamento" src="../resource/konno_dubl.jpg">
-                    <div class="img-dubladores-text right">Konno, Hiromi</div>
-                </div>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <?php }
+    include_once "conexao.php";
+    //$id = $_SESSION['Id'];
+    $sql = "SELECT * FROM anime WHERE Id = '1'";
+    $result = $conn->query($sql);
 
 
-    <div class="left">
-    <h3 class="my-3">Tema de Abertura</h3>
-        <div class="row">
-            <div class="descricao-texto-personagem">
-                "Motteke! Sailor Fuku" by Aya Hirano, Emiri Katou, Kaori Fukuhara & Aya Endou
-            </div>
-        </div>
-        <h3 class="my-3">Tema de Encerramento</h3>
-        <div class="row">
-            <div class="descricao-texto-personagem">
-                #01: "Uchuu Tetsujin Kyoodain (宇宙鉄人キョーダイン)" by Aya Hirano (ep 1) <br/>
-                #02: "Shouri da! Akumaizer 3 (勝利だ!アクマイザー3)" by Aya Hirano (ep 2)<br/>
-                #03: "Sore ga, Ai Deshou (それが, 愛でしょう)" by Aya Hirano (ep 3)<br/>
-                #04: "Sailor Fuku to Kikanjuu (セーラー服と機関銃)" by Emiri Kato (ep 4)<br/>
-                #05: "Cha-La Head-Cha-La" by Aya Hirano (ep 5)<br/>
-                #06: "Valentine Kiss (バレンタイン・キッス)" by Kaori Fukuhara (ep 6)<br/>
-                #07: "Chijou no Hoshi (地上の星)" by Aya Endo (ep 7)<br/>
-                #08: "Monkey Magic" by Aya Hirano (ep 8)<br/>
-                #09: "Kogarashi ni Dakarete (木枯しに抱かれて)" by Aya Hirano (ep 9)<br/>
-                #10: "I'm Proud" by Emiri Kato (ep 10)<br/>
-                <br/><br/><br/>
-            </div>
-        </div>
-    </div>
-    <div class="right">
-        <h3 class="my-3">Animes Relacionados</h3>
-        <div class="row">
-            <div class="descricao-texto-personagem">
-                Adaptation:	Lucky☆Star<br/>
-                Character:	Anime Tenchou<br/>
-                Sequel:	Lucky☆Star: Original na Visual to Animation<br/>
-                Spin-off:	Miyakawa-ke no Kuufuku
 
-            </div>
-        </div>
-    </div>
+    if ($result->num_rows > 0) {
+        echo '<div class="container">';
 
-    <?php } ?>
+        while ($row = $result->fetch_assoc()) {
+            $titulo = $row['title'];
+            $titulo_eng = $row['title_eng'];
+            $titulo_jap = $row['title_jap'];
+            $title_synonyms = $row['title_synonyms'];
+            $url_img = $row['img_url'];
+            $type = $row['type'];
+            $source_type =$row['source_type'];
+            $episodes = $row['episodes'];
+            $status = $row['status'];
+            $aired_string = $row['aired_string'];
+            $duration = $row['duration'];
+            $rating = $row['rating'];
+            $score = $row['score'];
+            $scored_by = $row['scored_by'];
+            $rank  = $row['rank'];
+            $popularity = $row['popularity'];
+            $members = $row['members'];
+            $favorites = $row['favorites'];
+            $synopses = $row['synopses'];
+            $premiered = $row['premiered'];
+            $broadcast = $row['broadcast'];
+            //FALTA ADICIONAR PRODUTORES, LICENSORS,STUDIOS, GENEROS, TEMA ABERTURA, TEMA FECHAMENTO, ANIMES RELACIONADOS, DUBLADORES(TABELA)
+
+            echo '<h1 class="my-4">'.$titulo.'</h1>
+                    <div class="row info-cell">
+                        <div class="info-cell-row col-md-9 col-md-push-3">
+                            <div class="row">
+                                <div class="col">
+                                    <b>SCORE</b>
+                                    <div class="text-score">'.$score.'</div>
+                                    <div class="text-users">'.$scored_by.'</div>
+                                </div>
+                                <div class="col ">Ranked <b>#'.$rank.'</b></div>
+                                <div class="col ">Popularity <b>#'.$popularity.'</b></div>
+                                <div class="col ">Members <b>'.$members.'</b></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-anime-detalhes">
+
+                        <div class="imagem-perfil-anime">
+                            <a href="#">
+                                <img class="img-fluid"  src="'.$url_img.'" alt="">
+                            </a>
+                        </div>
+                
+                        <div class="div-informacao-anime">
+                            <h3 class="my-3">Informação</h3>
+                            Tipo: '.$type.' <br/>
+                            Episódios: '.$episodes.'<br/>
+                            Status: '.$status.'<br/>
+                            Estreado em: '.$aired_string.'<br/>
+                            Premier: '.$premiered.'<br/>
+                            Transmissão: '.$broadcast.'<br/>
+                            Produtores: <br/>                                                                        
+                            Licenciadores: <br/>
+                            Estúdios: <br/>
+                            Fonte: '.$source_type.'<br/>
+                            Gêneros: <br/>
+                            Duração: '.$duration.'<br/>
+                            Avaliação: '.$rating.'<br/>
+                        </div>
+                
+                        <div class="div-estatisticas-anime">
+                            <h3 class="my-3">Estatísticas</h3>
+                            Score: '.$score.' (Avaliado por: '.$scored_by.' usuários)<br/>
+                            Rank: '.$rank.'<br/>
+                            Popularidade: '.$popularity.'<br/>
+                            Membros: '.$members.'<br/>
+                            Favoritos: '.$favorites.'<br/>
+                
+                            <h3 class="my-3">Títulos Alternativos</h3>
+                            Inglês: '.$titulo_eng.'<br/>
+                            Sinônimos: '.$title_synonyms.'<br/>
+                            Japonês: '.$titulo_jap.'<br/>
+                        </div>
+                    </div>
+                    <h3 class="my-3">Sinopse</h3>
+                    <div class="row">
+                        <div class="descricao-texto-personagem">
+                            '.$synopses.'
+                    </div>
+                    
+                    <h3 class="my-4">Dubladores Idioma Original</h3>
+                    <table class="table table-striped card-dubladores">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div>
+                                    <img class="img-dubladores-card left card-espacamento" src="../resource/konata-perfil.jpg">
+                                    <div class="img-dubladores-text">Izumi, Konata</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <img class="img-dubladores-card right card-espacamento" src="../resource/dubladora1.jpg">
+                                    <div class="img-dubladores-text right">Hirano, Aya</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <img class="img-dubladores-card left card-espacamento" src="../resource/kagami.jpg">
+                                    <div class="img-dubladores-text">Hiiragi, Kagami</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <img class="img-dubladores-card right card-espacamento" src="../resource/katou_dubl.jpg">
+                                    <div class="img-dubladores-text right">Katou, Emiri</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <div>
+                                    <img class="img-dubladores-card left card-espacamento" src="../resource/tsukasa.jpg">
+                                    <div class="img-dubladores-text">Hiiragi, Tsukasa</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <img class="img-dubladores-card right card-espacamento" src="../resource/fukuhara_dubl.jpg">
+                                    <div class="img-dubladores-text right">Fukuhara, Kaori</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <img class="img-dubladores-card left card-espacamento" src="../resource/miyumi.jpg">
+                                    <div class="img-dubladores-text">Takara, Miyuki</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <img class="img-dubladores-card right card-espacamento" src="../resource/endou_dubl.jpg">
+                                    <div class="img-dubladores-text right">Endou, Aya</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <div>
+                                    <img class="img-dubladores-card left card-espacamento" src="../resource/akira.jpg">
+                                    <div class="img-dubladores-text">Kogami, Akira</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <img class="img-dubladores-card right card-espacamento" src="../resource/konno_dubl.jpg">
+                                    <div class="img-dubladores-text right">Konno, Hiromi</div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="left">
+                        <h3 class="my-3">Tema de Abertura</h3>
+                            <div class="row">
+                                <div class="descricao-texto-personagem">
+                                   
+                                </div>
+                            </div>
+                            <h3 class="my-3">Tema de Encerramento</h3>
+                            <div class="row">
+                                <div class="descricao-texto-personagem">
+                                    
+                                    <br/><br/><br/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="right">
+                            <h3 class="my-3">Animes Relacionados</h3>
+                            <div class="row">
+                                <div class="descricao-texto-personagem">
+                                    
+                    
+                                </div>
+                            </div>
+                        </div>
+                </div>';
+        }
+
+    }
+
+    $conn->close();
+    ?>
+
 </body>
 </html>
 

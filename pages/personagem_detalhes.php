@@ -44,94 +44,102 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <nav class="nav">
         <a class="nav-detalhes-personagem">Detalhes do Personagem</a>
     </nav>
-    <div class="container">
 
-        <!-- Portfolio Item Heading -->
-        <h1 class="my-4">Konata Izumi
-            <small>"Kona-chan, KonaKona, Densetsu no Shoujo A"</small>
-        </h1>
-        <div class="row row-personagem-detalhes">
-            <div class="col-md-2 col-sm-6 mb-4 imagem-perfil-personagem">
-                <a href="#">
-                    <img class="img-fluid"  src="../resource/konata-perfil.jpg" alt="">
-                </a>
-            </div>
+        <?php }
+        include_once "conexao.php";
+        //$id = $_SESSION['Id'];
+        $sql = "SELECT * FROM personagem WHERE Id = '1'";
+        $result = $conn->query($sql);
 
-            <div class="div-personagem-detalhes">
-                <h3 class="my-2">Curiosidades</h3>
-                Age: 18 <br/>
-                Birthday: May 28 <br/>
-                Height: 142 cm (4'8") <br/>
-                Handedness: Ambidextrous <br/>
-                Zodiac Sign: Gemini <br/>
-                Residence: Satte, Saitama Prefecture <br/>
-                Blood type: A <br/>
-                Strong Subjects: PE (However, it is not her favorite subject) <br/>
-                Disliked Subjects: Math, Science <br/>
-                Favorite Food: Choco Cornet, Curry, Noodles <br/>
-                Favorite Color: Red <br/>
-                Hair Color: Blue <br/>
-                Eye Color: Green <br/>
-                Online Name: Konakona <br/>
-                <b>Member Favorites: 14,226</b> <br/>
-            </div>
-        </div>
 
-        <h3 class="my-3">Descrição</h3>
-        <div class="row">
-            <div class="descricao-texto-personagem" id="descricao-personagem">
-                Konata Izumi is, more by default than anything else, the "leader" of the main characters.
-                    Nicknamed "Kona-chan" by her friends, she is an eccentric but friendly and outgoing girl,
-                    with a mischeivous but good-natured sense of humor. She can be smart, but she hates studying,
-                    thus her grades are a bit uneasy. However, she is an expert in pulling an "all-nighter."
-                    In contrast to her studying habits, she loves video games, to the extent that she can compete against
-                    Kagami Hiiragi on trivia games (by remembering the question orders, not by knowing the actual answers).
-                    In addition, she loves anime, which is also due to her father, Soujirou Izumi's influence, along with the games.
-                    He buys ero-games for himself, so she is able to play and enjoy them. In fact, when she became eighteen,
-                    Konata was overjoyed, since she could now go buy and play ero-games legally. In the anime, Konata constantly refers
-                    to or parodies several popular games, anime, and manga (much to the annoyance of Kagami), but her favorite franchise seems
-                    to be the Haruhi series, as she has many Haruhi figurines and decorations that makes her room, and even once went to the
-                    Suzumiya Haruhi no Gekisou with her friends. She often gives false information to her family, thus making her father believe
-                    that Kagami and Tsukasa are shrine maidens. Interestingly enough, her voice actress for the animated version, Aya Hirano and
-                    Wendee Lee, is in fact the same person who voiced Haruhi Suzumiya in The Melancholy of Haruhi Suzumiya anime; other voice actors
-                    from the same series make guest appearances during the course of Lucky ☆ Star.
-                    <br/><br/>Since she spends quite a large sum of money on video games and doujinshi, Konata was lucky enough to get a part-time job at a cosplay cafe. Continuing with her theme of playing video games, Konata plays the role of a male character in an online game and is married in that world. Her significant other in the game is coincidently a male gamer using a female character. She often plays late into the night, hence why she tends to fall asleep in class, which makes her a frequent victim to her homeroom teacher, Nanako Kuroi. One of her talents as mentioned on the show is that she can name all the Pok$#!ns
-                    <br/><br/>Her physique is smaller than average when compared to her peers, which she claims hasn't changed, since she was in the sixth grade. She is ambidextrous, in contrast to the mostly left-handed main cast. She has long, blue hair which comes down to her calves with a large ahoge, sleepy eyes and a beauty mark under her left eye, just like her father. Her mother, Kanata Izumi, died when she was an infant, and she has lived alone with her father since. In her third year of high school, however, her cousin, Yutaka Kobayakawa, came to live at her house, giving a total of three people in the Izumi residence.
-            </div>
-        </div>
 
-        <h3 class="my-4">Dubladores</h3>
-        <div class="row img-dubladores">
-            <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
-                <a href="#">
-                    <img class="img-fluid" src="../resource/dubladora1.jpg" alt="">
-                </a>
-                <div>
-                    <h3>Hirano, Aya</h3>
-                    <p>Japanese</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
-                <a href="#">
-                    <img class="img-fluid" src="../resource/dubladora.jpg" alt="">
-                </a>
-                <div>
-                    <h3>Lee, Wendee</h3>
-                    <p>English</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
-                <a href="#">
-                    <img class="img-fluid" src="../resource/dubladora2.jpg" alt="">
-                </a>
-                <div>
-                    <h3>Jeong, Yu Mi</h3>
-                    <p>Korean</p>
-                </div>
-            </div>
-        </div>
+        if ($result->num_rows > 0) {
+            echo '<div class="container">';
 
-<?php } ?>
+            while ($row = $result->fetch_assoc()) {
+                $name = $row['name'];
+                $name_kanji = $row['name_kanji'];
+                $nickname = $row['nickname'];
+                $about = $row['about'];
+                $memberFavorites = $row['memberFavorites'];
+                $url = $row['Url'];
+                $img =$row['img'];
+
+                //FALTA ADICIONAR CURIOSIDADES (TABELA PERSON), DUBLADORES
+
+                echo '<h1 class="my-4">'.$name.'
+                        <small>'.$nickname.', '.$name_kanji.'</small>
+                        </h1>
+                        <div class="row row-personagem-detalhes">
+                            <div class="col-md-2 col-sm-6 mb-4 imagem-perfil-personagem">
+                                <a href="#">
+                                    <img class="img-fluid"  src="'.$img.'" alt="">
+                                </a>
+                            </div>
+                
+                            <div class="div-personagem-detalhes">
+                                <h3 class="my-2">Curiosidades</h3>
+                                Idade:  <br/>
+                                Aniversário:  <br/>
+                                Altura:  <br/>
+                                Servidão:  <br/>
+                                Signo:  <br/>
+                                Residência: Satte, <br/>
+                                Tipo Sanguíneo:  <br/>
+                                Matérias Preferidas: <br/>
+                                Piores matérias: <br/>
+                                Comida preferida:  <br/>
+                                Cor favorita:  <br/>
+                                Cor do cabelo:  <br/>
+                                Cor dos olhos:  <br/>
+                                Nome online:  <br/>
+                                <b>Favoritos: '.$memberFavorites.'</b> <br/>
+                            </div>
+                        </div>
+                
+                        <h3 class="my-3">Descrição</h3>
+                        <div class="row">
+                            <div class="descricao-texto-personagem" id="descricao-personagem">
+                                '.$about.'
+                                </div>
+                        </div>
+                
+                        <h3 class="my-4">Dubladores</h3>
+                        <div class="row img-dubladores">
+                            <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
+                                <a href="#">
+                                    <img class="img-fluid" src="../resource/dubladora1.jpg" alt="">
+                                </a>
+                                <div>
+                                    <h3>Hirano, Aya</h3>
+                                    <p>Japanese</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
+                                <a href="#">
+                                    <img class="img-fluid" src="../resource/dubladora.jpg" alt="">
+                                </a>
+                                <div>
+                                    <h3>Lee, Wendee</h3>
+                                    <p>English</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
+                                <a href="#">
+                                    <img class="img-fluid" src="../resource/dubladora2.jpg" alt="">
+                                </a>
+                                <div>
+                                    <h3>Jeong, Yu Mi</h3>
+                                    <p>Korean</p>
+                                </div>
+                            </div>
+                </div>';
+            }
+        }
+
+        $conn->close();
+        ?>
+
 </body>
 </html>
 

@@ -1,5 +1,6 @@
 {
     "require": {
-        "jikan-me/jikan": "^1.16"
+        "jikan-me/jikan": "^1.16",
+      "ext-mysqli": "*"
     }
 }

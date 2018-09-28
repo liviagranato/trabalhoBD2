@@ -62,73 +62,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <!--end of col-->
         </div>
     </div>
-    <div class="container">
-        <div class="row row-cards">
-            <div class="col-sm">
-                <div class="card card-imagem" onclick="window.location.href='personagem_detalhes.php'">
-                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                    <div class="div-titulo"><p class="titulo">Título1</p></div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="card card-imagem" onclick="window.location.href='personagem_detalhes.php'">
-                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                    <div class="div-titulo"><p class="titulo">Título2</p></div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="card card-imagem" onclick="window.location.href='personagem_detalhes.php'">
-                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                    <div class="div-titulo"><p class="titulo">Título3</p></div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="card card-imagem" onclick="window.location.href='personagem_detalhes.php'">
-                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                    <div class="div-titulo"><p class="titulo">Título4</p></div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="card card-imagem" onclick="window.location.href='personagem_detalhes.php'">
-                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                    <div class="div-titulo"><p class="titulo">Título5</p></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <div class="card card-imagem" onclick="window.location.href='personagem_detalhes.php'">
-                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                    <div class="div-titulo"><p class="titulo">Título1</p></div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="card card-imagem" onclick="window.location.href='personagem_detalhes.php'">
-                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                    <div class="div-titulo"><p class="titulo">Título2</p></div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="card card-imagem" onclick="window.location.href='personagem_detalhes.php'">
-                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                    <div class="div-titulo"><p class="titulo">Título3</p></div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="card card-imagem" onclick="window.location.href='personagem_detalhes.php'">
-                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                    <div class="div-titulo"><p class="titulo">Título4</p></div>
-                </div>
-            </div>
-            <div class="col-sm">
-                <div class="card card-imagem" onclick="window.location.href='personagem_detalhes.php'">
-                    <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                    <div class="div-titulo"><p class="titulo">Título5</p></div>
-                </div>
-            </div>
-        </div>
-    </div>
-<?php } ?>
+
+<?php }
+include_once "conexao.php";
+
+$sql = "SELECT * FROM manga";
+$result = $conn->query($sql);
+$count=0;
+$num_registros=0;
+if ($result->num_rows > 0) {
+    echo '<div class="container">';
+
+    while ($row = $result->fetch_assoc()) {
+        $titulo = $row['title'];
+        $url_img = $row['img'];
+        if ($count==4 || $num_registros==0){
+            echo '<div class="row">';
+        }
+        echo
+            '<div class="col-sm-3">
+                        <div class="card card-imagem" onclick="window.location.href=\'personagem_detalhes.php\'">
+                            <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
+                            <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
+                    </div>
+                </div>';
+        if ($count == 4){
+
+            echo '</div>';
+            $count=0;
+        }
+        $count++;
+        $num_registros++;
+        if ($num_registros == 20) break;
+    }
+    echo '</div>';
+}
+
+$conn->close();
+?>
+
 </body>
 </html>
 

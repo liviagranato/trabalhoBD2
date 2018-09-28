@@ -44,134 +44,162 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <nav class="nav">
     <a class="nav-detalhes-personagem">Detalhes do Manga</a>
 </nav>
-<div class="container">
 
-    <!-- Portfolio Item Heading -->
-    <h1 class="my-4">Berserk</h1>
-    <div class="row info-cell">
-        <div class="info-cell-row col-md-9 col-md-push-3">
-            <div class="row">
-                <div class="col">
-                    <b>SCORE</b>
-                    <div class="text-score">9.31</div>
-                    <div class="text-users">95.962 users</div>
-                </div>
-                <div class="col  ">Ranked <b>#1</b></div>
-                <div class="col ">Popularity <b>#6</b></div>
-                <div class="col ">Members <b>203,913</b></div>
-            </div>
-        </div>
-    </div>
-    <div class="row row-anime-detalhes">
+    <?php }
+    include_once "conexao.php";
+    //$id = $_SESSION['Id'];
+    $sql = "SELECT * FROM manga WHERE Id = '1'";
+    $result = $conn->query($sql);
 
-        <div class="imagem-perfil-manga">
-            <a href="#">
-                <img class="img-fluid"  src="../resource/berserk_manga.jpg" alt="">
-            </a>
-        </div>
+    if ($result->num_rows > 0) {
+        echo '<div class="container">';
 
-        <div class="div-informacao-manga">
-            <h3 class="my-3">Informação</h3>
-            Type: Manga<br/>
-            Volumes: Unknown<br/>
-            Chapters: Unknown<br/>
-            Status: Publishing<br/>
-            Published: Aug 25, 1989 to ?<br/>
-            Genres: Action, Adventure, Demons, Drama, Fantasy, Horror, Supernatural, Military, Psychological, Seinen<br/>
-            Authors: Miura, Kentarou (Story & Art)<br/>
-            Serialization: Young Animal<br/>
-        </div>
+        while ($row = $result->fetch_assoc()) {
+            $url_img = $row['url'];
+            $volume = $row['volume'];
+            $chapter = $row['chapter'];
+            $status = $row['status'];
+            $score = $row['score'];
+            $rating = $row['rating'];
+            $popularity = $row['popularity'];
+            $members = $row['members'];
+            $favorites = $row['favorites'];
+            $description = $row['description'];
+            $synopses = $row['synopsys'];
+            $titulo = $row['title'];
+            $titulo_eng = $row['title_eng'];
+            $titulo_jap = $row['title_jap'];
+            $type = $row['type'];
+            $is_publishing = $row['is_publishing'];
+            $published = $row['published'];
+            $scored_by = $row['scored_by'];
+            $rank  = $row['rank'];
+            $broadcast = $row['broadcast'];
 
-        <div class="div-estatisticas-manga">
-            <h3 class="my-3">Estatísticas</h3>
-            Score: 9.311 (scored by 95962 users)<br/>
-            Ranked: #12<br/>
-            Popularity: #6<br/>
-            Members: 203,913<br/>
-            Favorites: 44,358<br/>
+            //FALTA ADICIONAR GENEROS, AUTORES, SERIALIZAÇÃO, TITULOS SINONIMOS, PERSONAGENS (TABELA) , MANGAS RELACIONADOS
 
-            <h3 class="my-3">Títulos Alternativos</h3>
-            English: Berserk<br/>
-            Synonyms: Berserk: The Prototype<br/>
-            Japanese: ベルセルク<br/>
+            echo '<h1 class="my-4">'.$titulo.'</h1>
+                    <div class="row info-cell">
+                        <div class="info-cell-row col-md-9 col-md-push-3">
+                            <div class="row">
+                                <div class="col">
+                                    <b>SCORE</b>
+                                    <div class="text-score">'.$score.'</div>
+                                    <div class="text-users">'.$scored_by.' users</div>
+                                </div>
+                                <div class="col  ">Rank <b>#'.$rank.'</b></div>
+                                <div class="col ">Popularidade <b>#'.$popularity.'</b></div>
+                                <div class="col ">Membros <b>'.$members.'</b></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row row-anime-detalhes">
+                        <div class="imagem-perfil-manga">
+                            <a href="#">
+                                <img class="img-fluid"  src="'.$url_img.'" alt="">
+                            </a>
+                        </div>
+                
+                        <div class="div-informacao-manga">
+                            <h3 class="my-3">Informação</h3>
+                            Tipo: '.$type.'<br/>
+                            Volumes: '.$volume.'<br/>
+                            Capítulos: '.$chapter.'<br/>
+                            Status: '.$status.'<br/>
+                            Publicado em: '.$published.'<br/>
+                            Gêneros: <br/>
+                            Autores: <br/>
+                            Serialização: <br/>
+                        </div>
+                
+                        <div class="div-estatisticas-manga">
+                            <h3 class="my-3">Estatísticas</h3>
+                            Score: '.$score.' (Avaliado por: '.$scored_by.' usuários)<br/>
+                            Rank: #'.$rank.'<br/>
+                            Popularidade: #'.$popularity.'<br/>
+                            Membros: '.$members.'<br/>
+                            Favoritos: '.$favorites.'<br/>
+                
+                            <h3 class="my-3">Títulos Alternativos</h3>
+                            Inglês: '.$titulo_eng.'<br/>
+                            Sinônimos: <br/>
+                            Japonês: '.$titulo_jap.'<br/>
+                
+                        </div>
+                    </div>
+                    <h3 class="my-3">Sinopse</h3>
+                        <div class="row">
+                            <div class="descricao-texto-personagem">
+                                '.$synopses.'
+                            </div>
+                        </div>
+                    
+                        <h3 class="my-4">Personagens Principais</h3>
+                        <table class="table table-striped card-dubladores">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <img class="img-dubladores-card left card-espacamento" src="../resource/puck.jpg">
+                                        <div class="img-dubladores-text">Guts</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <img class="img-dubladores-card left card-espacamento" src="../resource/griffith.jpg">
+                                        <div class="img-dubladores-text">Griffith</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >
+                                    <div>
+                                        <img class="img-dubladores-card left card-espacamento" src="../resource/casca.jpg">
+                                        <div class="img-dubladores-text">Casca</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <img class="img-dubladores-card left card-espacamento" src="../resource/schierke.jpg">
+                                        <div class="img-dubladores-text">Schierke</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >
+                                    <div>
+                                        <img class="img-dubladores-card left card-espacamento" src="../resource/puck.jpg">
+                                        <div class="img-dubladores-text">Puck</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    
+                        <div class="right">
+                            <h3 class="my-3">Mangas Relacionados</h3>
+                            <div class="row">
+                                <div class="descricao-texto-personagem">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    
+                    
+                   
+                </div>';
+        }
 
-        </div>
-    </div>
+    }
 
-    <h3 class="my-3">Sinopse</h3>
-    <div class="row">
-        <div class="descricao-texto-personagem">
-            Guts, a former mercenary now known as the "Black Swordsman," is out for revenge. After a tumultuous childhood,
-            he finally finds someone he respects and believes he can trust, only to have everything fall apart when this person takes
-            away everything important to Guts for the purpose of fulfilling his own desires.
-            Now marked for death, Guts becomes condemned to a fate in which he is relentlessly pursued by demonic beings.
-            <br/>Setting out on a dreadful quest riddled with misfortune, Guts, armed with a massive sword and monstrous strength,
-            will let nothing stop him, not even death itself,
-            until he is finally able to take the head of the one who stripped him—and his loved one—of their humanity.
-            <br/><br/>
-            <b>Included one-shot:</b>
-            <br/>Volume 14: Berserk: The Prototype
-        </div>
-    </div>
+    $conn->close();
+    ?>
 
-    <h3 class="my-4">Personagens Principais</h3>
-    <table class="table table-striped card-dubladores">
-        <tbody>
-        <tr>
-            <td>
-                <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/puck.jpg">
-                    <div class="img-dubladores-text">Guts</div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/griffith.jpg">
-                    <div class="img-dubladores-text">Griffith</div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/casca.jpg">
-                    <div class="img-dubladores-text">Casca</div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/schierke.jpg">
-                    <div class="img-dubladores-text">Schierke</div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td >
-                <div>
-                    <img class="img-dubladores-card left card-espacamento" src="../resource/puck.jpg">
-                    <div class="img-dubladores-text">Puck</div>
-                </div>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-
-    <div class="right">
-        <h3 class="my-3">Mangas Relacionados</h3>
-        <div class="row">
-            <div class="descricao-texto-personagem">
-                Other:	Berserk: Shinen no Kami 2, Berserk: Honou Ryuu no Kishi
-                <br/>Adaptation:	Berserk: Ougon Jidai-hen II - Doldrey Kouryaku, Berserk: Ougon Jidai-hen I - Haou no Tamago, Berserk: Ougon Jidai-hen III - Kourin, Kenpuu Denki Berserk, Berserk, Berserk 2nd Season
-            <br/><br/><br/><br/>
-            </div>
-        </div>
-    </div>
-    <br/>
-    <?php } ?>
 </body>
 </html>
 
