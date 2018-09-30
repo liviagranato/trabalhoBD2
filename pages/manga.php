@@ -14,7 +14,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-<?php include 'navbar.php'; ?>
+<?php include 'navbar.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,15 +45,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <br/>
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
-                <form>
+                <form method="get" action="anime.php">
                     <div class="card-body row no-gutters align-items-center">
                         <!--end of col-->
                         <div class="col">
-                            <input class="form-control form-control-lg" type="search" placeholder="Buscar Manga">
+                            <input class="form-control form-control-lg" name="busca" id="busca" type="search" placeholder="Buscar Manga">
                         </div>
                         <!--end of col-->
                         <div class="col-auto">
-                            <button class="btn btn-lg btn-success" type="submit">Buscar</button>
+                            <button class="btn btn-lg btn-success" type="submit" name="submit" value="submit" id="submit">Buscar</button>
                         </div>
                         <!--end of col-->
                     </div>
@@ -65,37 +65,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <?php }
 include_once "conexao.php";
+include "funcoes.php";
+
 
 $sql = "SELECT * FROM manga";
 $result = $conn->query($sql);
 $count=0;
 $num_registros=0;
 if ($result->num_rows > 0) {
-    $aux = ($result->num_rows)/4;
+    $aux = ceil(($result->num_rows)/4);
+    ob_start();
     echo '<div class="container">';
-    for ($i=0; $i<$aux; $i++){
-        echo '<div class="row">';
-        while ($row = $result->fetch_assoc()) {
+        for ($i=0; $i<$aux; $i++){
+            echo '<div class="row">';
+            while ($row = $result->fetch_assoc()) {
             $titulo = $row['title'];
             $url_img = $row['img'];
-            echo
-                '<div class="col-sm-3">
+                echo
+                    '<div class="col-sm-3">
                         <div class="card card-imagem" onclick="window.location.href=\'manga_detalhes.php\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
                     </div>
                 </div>';
-            $num_registros++;
-            if ($num_registros == 20) break;
+                $num_registros++;
+                if ($num_registros == 20) break;
+            }
+            echo '</div>';
         }
-        echo '</div>';
-    }
     echo '</div>';
 }
 
 $conn->close();
-?>
+if (isset($_GET['submit'])) {
+    $nome = $_GET['busca'];
+    if($nome!='') {
 
+        buscar($nome, 'manga');
+    }
+}
+?>
 </body>
 </html>
 

@@ -14,7 +14,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-<?php include 'navbar.php'; ?>
+<?php include 'navbar.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,15 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <br/>
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
-                <form>
+                <form method="get" action="anime.php">
                     <div class="card-body row no-gutters align-items-center">
                         <!--end of col-->
                         <div class="col">
-                            <input class="form-control form-control-lg" type="search" placeholder="Buscar Personagem">
+                            <input class="form-control form-control-lg" name="busca" id="busca" type="search" placeholder="Buscar Personagem">
                         </div>
                         <!--end of col-->
                         <div class="col-auto">
-                            <button class="btn btn-lg btn-success" type="submit">Buscar</button>
+                            <button class="btn btn-lg btn-success" type="submit" name="submit" value="submit" id="submit">Buscar</button>
                         </div>
                         <!--end of col-->
                     </div>
@@ -65,18 +66,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <?php }
 include_once "conexao.php";
+include "funcoes.php";
 
-$sql = "SELECT * FROM manga";
+
+$sql = "SELECT * FROM personagem";
 $result = $conn->query($sql);
 $count=0;
 $num_registros=0;
 if ($result->num_rows > 0) {
-    $aux = ($result->num_rows)/4;
+    $aux = ceil(($result->num_rows)/4);
+    ob_start();
     echo '<div class="container">';
     for ($i=0; $i<$aux; $i++){
         echo '<div class="row">';
         while ($row = $result->fetch_assoc()) {
-            $titulo = $row['title'];
+            $titulo = $row['name'];
             $url_img = $row['img'];
             echo
                 '<div class="col-sm-3">
@@ -94,6 +98,13 @@ if ($result->num_rows > 0) {
 }
 
 $conn->close();
+if (isset($_GET['submit'])) {
+    $nome = $_GET['busca'];
+    if($nome!='') {
+
+        buscar($nome, 'personagem');
+    }
+}
 ?>
 
 </body>

@@ -14,7 +14,7 @@
 <?php include_once 'navbar_cadastro.php'?>
 
 <div class="container">
-    <div class="card card-container-cadastro">
+    <div class="card2 card-container-cadastro">
         <h1 class="center">Cadastrar Usuários</h1>
         <br/>
         <p id="profile-name" class="profile-name-card"></p>

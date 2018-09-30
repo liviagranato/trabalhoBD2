@@ -4,12 +4,12 @@
     background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
 }
 
-.card-container.card {
+.card-container.card2 {
     max-width: 500px;
     padding: 40px 40px;
     margin-top: 150px;
 }
-.card-container-cadastro.card {
+.card2-container-cadastro.card {
     max-width: 100%;
 }
 .btn-2 {
@@ -24,7 +24,7 @@
 /*
  * Card component
  */
-.card {
+.card2 {
     background-color: #F7F7F7;
     /* just in case there no content*/
     padding: 20px 25px 30px;
@@ -194,6 +194,9 @@
 
 .card-imagem{
     cursor: pointer;
+    height: 350px;
+    width: 250px;
+    margin-bottom: 30px;
 }
 
 .nav2{

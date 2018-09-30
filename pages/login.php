@@ -13,7 +13,7 @@
 </head>
 <body class="fundo_login">
 <div class="container">
-    <div class="card card-container">
+    <div class="card2 card-container">
         <h1 class="center">Login</h1>
         <br/>
         <p id="profile-name" class="profile-name-card"></p>
