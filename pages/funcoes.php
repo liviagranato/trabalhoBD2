@@ -2,7 +2,7 @@
 
 function buscar($nome, $tabela){
 
-    if ($tabela ==='personagem'){
+    if ($tabela ==='personagem' || $tabela==='person'){
         $campo = 'name';
     } else {
         $campo = 'title';
@@ -15,7 +15,7 @@ function buscar($nome, $tabela){
     $result = $conn->query($sql);
     $num_registros=0;
     ob_end_clean();
-    if ($campo==='personagem') {
+    if ($tabela==='personagem' || $tabela==='person') {
         if ($result->num_rows > 0) {
             $aux = ($result->num_rows) / 4;
             echo '<div class="container">';
@@ -23,14 +23,27 @@ function buscar($nome, $tabela){
                 echo '<div class="row">';
                 while ($row = $result->fetch_assoc()) {
                     $titulo = $row['name'];
-                    $url_img = $row['img'];
-                    echo
-                        '<div class="col-sm-3">
+                    if($tabela ==='personagem'){
+                        $url_img = $row['img'];
+                        echo
+                            '<div class="col-sm-3">
                         <div class="card card-imagem" onclick="window.location.href=\'personagem_detalhes.php\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
                     </div>
                 </div>';
+                    }
+                    if($tabela ==='person'){
+                        $url_img = $row['image'];
+                        echo
+                            '<div class="col-sm-3">
+                        <div class="card card-imagem" onclick="window.location.href=\'pessoa_detalhes.php\'">
+                            <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
+                            <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
+                    </div>
+                </div>';
+                    }
+
                     $num_registros++;
                     if ($num_registros == 20) break;
                 }

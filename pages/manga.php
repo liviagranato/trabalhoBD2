@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <br/>
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
-                <form method="get" action="anime.php">
+                <form method="get" action="manga.php">
                     <div class="card-body row no-gutters align-items-center">
                         <!--end of col-->
                         <div class="col">

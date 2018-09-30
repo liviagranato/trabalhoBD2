@@ -16,6 +16,7 @@
 <body>
 <?php include 'navbar.php';
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,16 +42,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db->close();
     echo '<p><a href="principal.php">Pagina inicial</a></p>' . "\n";
 } else { ?>
+
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <div class="container">
         <br/>
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
-                <form method="get" action="personagem.php">
+                <form method="get" action="pessoas.php">
                     <div class="card-body row no-gutters align-items-center">
                         <!--end of col-->
                         <div class="col">
-                            <input class="form-control form-control-lg" name="busca" id="busca" type="search" placeholder="Buscar Personagem">
+                            <input class="form-control form-control-lg" name="busca" id="busca" type="search" placeholder="Buscar Pessoas">
                         </div>
                         <!--end of col-->
                         <div class="col-auto">
@@ -64,12 +67,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 
+
+
 <?php }
 include_once "conexao.php";
 include "funcoes.php";
 
 
-$sql = "SELECT * FROM personagem";
+$sql = "SELECT * FROM person";
 $result = $conn->query($sql);
 $count=0;
 $num_registros=0;
@@ -80,11 +85,13 @@ if ($result->num_rows > 0) {
     for ($i=0; $i<$aux; $i++){
         echo '<div class="row">';
         while ($row = $result->fetch_assoc()) {
+
             $titulo = $row['name'];
-            $url_img = $row['img'];
+            $url_img = $row['image'];
+
             echo
                 '<div class="col-sm-3">
-                        <div class="card card-imagem" onclick="window.location.href=\'personagem_detalhes.php\'">
+                        <div class="card card-imagem" onclick="window.location.href=\'pessoa_detalhes.php\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
                     </div>
@@ -102,7 +109,7 @@ if (isset($_GET['submit'])) {
     $nome = $_GET['busca'];
     if($nome!='') {
 
-        buscar($nome, 'personagem');
+        buscar($nome, 'person');
     }
 }
 ?>
