@@ -76,31 +76,28 @@ $result = $conn->query($sql);
 $count=0;
 $num_registros=0;
 if ($result->num_rows > 0) {
+    $aux = ($result->num_rows)/4;
     echo '<div class="container">';
+        for ($i=0; $i<$aux; $i++){
+            echo '<div class="row">';
+            while ($row = $result->fetch_assoc()) {
 
-        while ($row = $result->fetch_assoc()) {
                 $titulo = $row['title'];
                 $url_img = $row['img_url'];
                 $id = $row['Id'];
                 $_SESSION['Id'] = $id;
-                if ($count==4 || $num_registros==0){
-                    echo '<div class="row">';
-                }
+
                 echo
-                '<div class="col-sm-3">
+                    '<div class="col-sm-3">
                         <div class="card card-imagem" onclick="window.location.href=\'animes_detalhes.php\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
                     </div>
                 </div>';
-                if ($count == 4){
-
-                    echo '</div>';
-                    $count=0;
-                }
-                $count++;
-            $num_registros++;
-            if ($num_registros == 20) break;
+                $num_registros++;
+                if ($num_registros == 20) break;
+            }
+            echo '</div>';
         }
     echo '</div>';
 }

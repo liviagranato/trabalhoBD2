@@ -71,30 +71,25 @@ $result = $conn->query($sql);
 $count=0;
 $num_registros=0;
 if ($result->num_rows > 0) {
+    $aux = ($result->num_rows)/4;
     echo '<div class="container">';
-
+    for ($i=0; $i<$aux; $i++){
+        echo '<div class="row">';
         while ($row = $result->fetch_assoc()) {
-                $titulo = $row['title'];
-                $url_img = $row['img'];
-                if ($count==4 || $num_registros==0){
-                    echo '<div class="row">';
-                }
-                echo
+            $titulo = $row['title'];
+            $url_img = $row['img'];
+            echo
                 '<div class="col-sm-3">
                         <div class="card card-imagem" onclick="window.location.href=\'manga_detalhes.php\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
                     </div>
                 </div>';
-                if ($count == 4){
-
-                    echo '</div>';
-                    $count=0;
-                }
-                $count++;
             $num_registros++;
             if ($num_registros == 20) break;
         }
+        echo '</div>';
+    }
     echo '</div>';
 }
 
