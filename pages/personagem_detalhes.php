@@ -19,7 +19,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Consultar</title>
+    <title>Personagem</title>
 </head>
 <body>
 <?php
@@ -41,9 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo '<p><a href="principal.php">Pagina inicial</a></p>' . "\n";
 } else { ?>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <nav class="nav">
-        <a class="nav-detalhes-personagem">Detalhes do Personagem</a>
-    </nav>
     <div class="container">
 
         <!-- Portfolio Item Heading -->

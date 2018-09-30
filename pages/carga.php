@@ -1,30 +1,69 @@
 <html><head><title>Inserindo dados no banco</title></head>
 <body>
+
 <?php
-/* insert students into DB */
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new mysqli('localhost', 'root', '', 'api_mal');
     if ($db->connect_errno)
         echo "Erro na conexão com o banco de dados: " . $db->connect_error;
-    $sql = "INSERT INTO aluno VALUES(" . $_POST["matric"] . ",'" .
-        $_POST["nome"] . "','" . $_POST["endereco"] . "','" . $_POST["email"] . "')";
-    echo $sql;
-    if (!$db->query($sql))
-        echo "Erro na execução da query";
+    require_once "../vendor/autoload.php"; // require your composer autoloader file wherever it is
+
+    $jikan = new Jikan\Jikan;
+    // $db->insert_id
+    for ($i=1; $i<2; $i++){ 
+        try {
+            $json = $jikan->Anime($i);
+            var_dump($json);
+        } catch (Exception $e) {
+            echo '<script>';
+            echo 'console.log(';
+            echo 'Caught exception: ', $e->getMessage(); // "File does not exist" (the anime with this ID doesn't exist on MAL)
+        }
+        //sleep(3);
+        echo $json->{'response'}['mal_id'];
+        $anime = $json->{'response'};
+        $aired = NULL;
+        $sql = "INSERT INTO anime VALUES(\' " . $anime['aired']['from']. ",'".  $anime['aired']['to'] . "')";
+        if (!$db->query($sql)){
+            echo '<script>';
+            echo 'console.log(';
+            echo "\"Erro na execução da query\"";
+            echo ');';
+            echo '</script>';
+            $aired = $db->insert_id;
+        }
+        
+
+
+        $sql = "INSERT INTO anime VALUES(" .$anime['mal_id'] . ",'" .
+        $anime['link_canonical'] . "','" . $anime['title'] . "','" .
+        $anime['title_english'] . "','" . $anime['title_japanese'] . "','" .
+        $anime['title_synonyms'] . "','" . $anime['image_url'] . "','" .
+        $anime['type'] . "','" . $anime['source'] . "','" .
+        $anime['episodes'] . "','" . $anime['status'] . "','" .
+        $anime['airing'] . "','" . $anime['aired_string'] . "','" .
+        $aired . "','" . $anime['duration'] . "','" .
+        $anime['rating'] . "','" . $anime['score'] . "','" .
+        $anime['scored_by'] . "','" . $anime['rank'] . "','" .
+        $anime['popularity'] . "','" . $anime['members'] . "','" .
+        $anime['favorites'] . "','" . $anime['synopsis'] . "','" .
+        $anime['premiered'] . "','" . $anime['broadcast'] . "','" .
+        $anime['related'] . "','" . $anime['producer'] . "','" .
+        $anime['licensor'] . "','" . $anime['studio'] . "','" .
+        $anime['genre'] . "','" . $anime['opening_theme'] . "','" .
+        $anime['ending_theme'] . "')";
+        echo $sql;
+        //if (!$db->query($sql)){
+        //    echo '<script>';
+           // echo 'console.log(';
+            //echo "Erro na execução da query";
+            //echo ');';
+          //  echo '</script>';
+        //}
+    }
     $db->close();
     echo"<h3>Obrigado. Seus dados foram inseridos</h3> \n";
     echo'<p><a href="principal.php">Pagina inicial</a></p>' . "\n";
-} else {
     ?>
-    <h3>Entre com seus dados</h3>
-    <form action="data_in.php" method="post">
-        Matricula: <input type="number" name="matric" /> <br/>
-        Nome......: <input type="text" name="nome" /> <br/>
-        Endereco.: <input type="text" name="endereco" /> <br/>
-        email.......: <input type="text" name="email" /> <br/>
-        <br/>
-        <input type="submit" name="submit" /> <input type="reset" />
-    </form>
-    <p><a href="principal.php">Pagina inicial</a></p>
-<?php } ?>
+     <button class="btn btn-lg btn-success" type="submit">Carregar</button>
+
 </body></html>
