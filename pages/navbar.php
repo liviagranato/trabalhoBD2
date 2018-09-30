@@ -28,5 +28,25 @@
 <!--            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
 <!--            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
 <!--        </form>-->
-    </div>
-</nav>
+
+
+
+
+<?php
+$funcao = $_COOKIE['inputFuncao'];
+echo '<div class="right">
+        <lu class="navbar-nav mr-auto">
+            <li class="nav-item right">
+                <a class="nav-link" href="logout.php">Logout</a>
+            </li>
+        
+    ';
+
+if (isset($_COOKIE['inputFuncao']) && $_COOKIE['inputFuncao'] == '1') {
+    echo '<li class="nav-item right">
+                <a class="nav-link" href="cadastro.php">Cadastro</a>
+            </li>
+        ';
+}
+echo '</lu></div></div></nav>';
+?>

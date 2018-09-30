@@ -52,8 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "SELECT * FROM anime WHERE Id = '1'";
     $result = $conn->query($sql);
 
-
-
     if ($result->num_rows > 0) {
         echo '<div class="container">';
 
@@ -141,81 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             '.$synopses.'
                     </div>
                     
-                    <h3 class="my-4">Dubladores Idioma Original</h3>
-                    <table class="table table-striped card-dubladores">
-                        <tbody>
-                        <tr>
-                            <td>
-                                <div>
-                                    <img class="img-dubladores-card left card-espacamento" src="../resource/konata-perfil.jpg">
-                                    <div class="img-dubladores-text">Izumi, Konata</div>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <img class="img-dubladores-card right card-espacamento" src="../resource/dubladora1.jpg">
-                                    <div class="img-dubladores-text right">Hirano, Aya</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                    <img class="img-dubladores-card left card-espacamento" src="../resource/kagami.jpg">
-                                    <div class="img-dubladores-text">Hiiragi, Kagami</div>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <img class="img-dubladores-card right card-espacamento" src="../resource/katou_dubl.jpg">
-                                    <div class="img-dubladores-text right">Katou, Emiri</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td >
-                                <div>
-                                    <img class="img-dubladores-card left card-espacamento" src="../resource/tsukasa.jpg">
-                                    <div class="img-dubladores-text">Hiiragi, Tsukasa</div>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <img class="img-dubladores-card right card-espacamento" src="../resource/fukuhara_dubl.jpg">
-                                    <div class="img-dubladores-text right">Fukuhara, Kaori</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                    <img class="img-dubladores-card left card-espacamento" src="../resource/miyumi.jpg">
-                                    <div class="img-dubladores-text">Takara, Miyuki</div>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <img class="img-dubladores-card right card-espacamento" src="../resource/endou_dubl.jpg">
-                                    <div class="img-dubladores-text right">Endou, Aya</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td >
-                                <div>
-                                    <img class="img-dubladores-card left card-espacamento" src="../resource/akira.jpg">
-                                    <div class="img-dubladores-text">Kogami, Akira</div>
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <img class="img-dubladores-card right card-espacamento" src="../resource/konno_dubl.jpg">
-                                    <div class="img-dubladores-text right">Konno, Hiromi</div>
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    
                     <div class="left">
                         <h3 class="my-3">Tema de Abertura</h3>
                             <div class="row">
@@ -245,7 +169,50 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
     }
+    $sql = "SELECT * FROM anime as a left join personagem as p on a.id=p.FK_Anime_Id 
+     left join voiceactors as v on v.voiceActors_PK=p.FK_voiceActors_voiceActors_PK left join faz as f on FK_Manga_id= WHERE a.Id = '1'";
+    $result = $conn->query($sql);
+    $dubladores = array();
+    $personagens = array();
+    $index = 0;
+    if ($result->num_rows > 0) {
+        echo '<div class="container">
+               <h3 class="my-4">Dubladores Idioma Original</h3>
+               <table class="table table-striped card-dubladores">
+                        <tbody>';
 
+
+        while ($row = mysqli_fetch_assoc($result)) {
+                $personagem[$index] = $row['name'];
+                ///$personagemFoto[$index] = $row[];
+                $dubladores[$index] = $row['voiceActors'];
+
+                echo''.$personagem[$index].'';
+                $index++;
+        }
+
+        for ($i=0; $i<$index; $i++){
+                    echo ' 
+                            <tr>
+                                <td>
+                                    <div>
+                                        <img class="img-dubladores-card left card-espacamento" src="../resource/konata-perfil.jpg">
+                                        <div class="img-dubladores-text">'.$personagem[$index].'</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <img class="img-dubladores-card right card-espacamento" src="../resource/dubladora1.jpg">
+                                        <div class="img-dubladores-text right">'.$dubladores[$index].'</div>
+                                    </div>
+                                </td>
+                            </tr>';
+
+        }
+                echo '</tbody>
+                </table>';
+
+    }
     $conn->close();
     ?>
 

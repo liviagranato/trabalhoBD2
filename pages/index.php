@@ -17,9 +17,8 @@ require_once "../vendor/autoload.php"; // require your composer autoloader file 
 
 $jikan = new Jikan\Jikan;
 
-/*for ($i=1; $i<1000; $i++){
-    var_dump($jikan->Anime($i)->response); // get anime with ID 1 on MAL
-    var_dump($jikan->Manga($i)->response); // get manga with ID 1 on MAL
+/*for ($i=1; $i<2; $i++){
+    var_dump($jikan->AnimeCharacterStaff($i)->response); // get anime with ID 1 on MAL
       try {
         $jikan->Anime($i);
           echo '<script>';
