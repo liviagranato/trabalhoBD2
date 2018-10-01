@@ -211,7 +211,7 @@
 }
 
 .imagem-perfil-personagem{
-    width: 40%;
+    width: 30%;
     padding-top: 5px;
     display: table-cell;
     vertical-align: middle;
@@ -237,8 +237,6 @@
     display: table;
 }
 .descricao-texto-personagem{
-    margin-left: 50px;
-    margin-right: 50px;
     text-align: justify;
 }
 .row-cards{
@@ -247,7 +245,8 @@
 }
 .personagem-detalhes-card-dubladores{
     height: 350px;
-    width: 225px;
+    width: 250px;
+    vertical-align: top;
     display: table-cell;
 }
 .img-dubladores{

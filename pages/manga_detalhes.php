@@ -47,15 +47,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <?php }
     include_once "conexao.php";
-    //$id = $_SESSION['Id'];
-    $sql = "SELECT * FROM manga WHERE Id = '1'";
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM manga WHERE id = '$id'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         echo '<div class="container">';
 
         while ($row = $result->fetch_assoc()) {
-            $url_img = $row['url'];
+            $url_img = $row['img'];
             $volume = $row['volume'];
             $chapter = $row['chapter'];
             $status = $row['status'];
@@ -65,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $members = $row['members'];
             $favorites = $row['favorites'];
             $description = $row['description'];
-            $synopses = $row['synopsys'];
             $titulo = $row['title'];
             $titulo_eng = $row['title_eng'];
             $titulo_jap = $row['title_jap'];
@@ -131,57 +130,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <h3 class="my-3">Sinopse</h3>
                         <div class="row">
                             <div class="descricao-texto-personagem">
-                                '.$synopses.'
+                                '.$description.'
                             </div>
                         </div>
                     
-                        <h3 class="my-4">Personagens Principais</h3>
-                        <table class="table table-striped card-dubladores">
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <div>
-                                        <img class="img-dubladores-card left card-espacamento" src="../resource/puck.jpg">
-                                        <div class="img-dubladores-text">Guts</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div>
-                                        <img class="img-dubladores-card left card-espacamento" src="../resource/griffith.jpg">
-                                        <div class="img-dubladores-text">Griffith</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td >
-                                    <div>
-                                        <img class="img-dubladores-card left card-espacamento" src="../resource/casca.jpg">
-                                        <div class="img-dubladores-text">Casca</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div>
-                                        <img class="img-dubladores-card left card-espacamento" src="../resource/schierke.jpg">
-                                        <div class="img-dubladores-text">Schierke</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td >
-                                    <div>
-                                        <img class="img-dubladores-card left card-espacamento" src="../resource/puck.jpg">
-                                        <div class="img-dubladores-text">Puck</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    
-                        <div class="right">
+                        <div class="my-4">
                             <h3 class="my-3">Mangas Relacionados</h3>
                             <div class="row">
                                 <div class="descricao-texto-personagem">
@@ -196,7 +149,43 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
     }
+$sql = "SELECT m.id, p.name, p.img, p.FK_Manga_id FROM manga as m left join personagem as p on m.id=p.FK_Manga_id where m.id='$id'";
+$result = $conn->query($sql);
+$personagens = array();
+$index = 0;
+$num_registros=0;
+if ($result->num_rows > 0) {
 
+    echo '
+<div class="container">
+               <h3 class="my-4">Personagens Principais</h3>
+               <table class="table table-striped card-dubladores">
+                        <tbody>';
+
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $personagem[$index] = $row['name'];
+        $personagemFoto[$index] = $row['img'];
+
+            echo ' 
+                            <tr>
+                                <td>
+                                    <div>
+                                        <img class="img-dubladores-card left card-espacamento" src="' . $personagemFoto[$index] . '">
+                                        <div class="img-dubladores-text">' . $personagem[$index] . '</div>
+                                    </div>
+                                </td>
+                            </tr>';
+            $index++;
+        $num_registros++;
+        if($num_registros == 5){
+            break;
+        }
+    }
+    echo '</tbody>
+        </table>';
+
+}
     $conn->close();
     ?>
 

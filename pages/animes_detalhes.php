@@ -48,10 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <?php }
     include_once "conexao.php";
-    //$id = $_SESSION['Id'];
-    $sql = "SELECT * FROM anime WHERE Id = '1'";
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM anime WHERE Id = '$id'";
     $result = $conn->query($sql);
-
     if ($result->num_rows > 0) {
         echo '<div class="container">';
 
@@ -86,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <div class="col">
                                     <b>SCORE</b>
                                     <div class="text-score">'.$score.'</div>
-                                    <div class="text-users">'.$scored_by.'</div>
+                                    <div class="text-users">'.$scored_by.' users</div>
                                 </div>
                                 <div class="col ">Ranked <b>#'.$rank.'</b></div>
                                 <div class="col ">Popularity <b>#'.$popularity.'</b></div>
@@ -169,48 +168,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
     }
-    $sql = "SELECT * FROM anime as a left join personagem as p on a.id=p.FK_Anime_Id 
-     left join voiceactors as v on v.voiceActors_PK=p.FK_voiceActors_voiceActors_PK left join faz as f on FK_Manga_id= WHERE a.Id = '1'";
+    $sql = "SELECT a.Id, p.name as nP, p.img, p.FK_Anime_Id, d.FK_Person_id, d.FK_Personagem_id, pe.name as nPessoa, pe.image FROM anime as a left join personagem as p on a.Id=p.FK_Anime_Id 
+     left join dubla as d on p.id = d.FK_Personagem_id left join person as pe on d.FK_Person_id = pe.id where a.id='$id'";
     $result = $conn->query($sql);
     $dubladores = array();
     $personagens = array();
     $index = 0;
+    $num_registros=0;
     if ($result->num_rows > 0) {
-        echo '<div class="container">
-               <h3 class="my-4">Dubladores Idioma Original</h3>
+        echo '<h3 class="my-4">Dubladores Idioma Original</h3>
+<div class="container">
+               
                <table class="table table-striped card-dubladores">
                         <tbody>';
 
 
         while ($row = mysqli_fetch_assoc($result)) {
-                $personagem[$index] = $row['name'];
-                ///$personagemFoto[$index] = $row[];
-                $dubladores[$index] = $row['voiceActors'];
+            $personagem[$index] = $row['nP'];
+            $personagemFoto[$index] = $row['img'];
+            $dubladores[$index] = $row['nPessoa'];
+            $pessoaFoto[$index] = $row['image'];
+            if (!$dubladores[$index]) {
 
-                echo''.$personagem[$index].'';
-                $index++;
-        }
-
-        for ($i=0; $i<$index; $i++){
-                    echo ' 
+            } else {
+                echo ' 
                             <tr>
                                 <td>
                                     <div>
-                                        <img class="img-dubladores-card left card-espacamento" src="../resource/konata-perfil.jpg">
-                                        <div class="img-dubladores-text">'.$personagem[$index].'</div>
+                                        <img class="img-dubladores-card left card-espacamento" src="' . $personagemFoto[$index] . '">
+                                        <div class="img-dubladores-text">' . $personagem[$index] . '</div>
                                     </div>
                                 </td>
                                 <td>
                                     <div>
-                                        <img class="img-dubladores-card right card-espacamento" src="../resource/dubladora1.jpg">
-                                        <div class="img-dubladores-text right">'.$dubladores[$index].'</div>
+                                        <img class="img-dubladores-card right card-espacamento" src="' . $pessoaFoto[$index] . '">
+                                        <div class="img-dubladores-text right">' . $dubladores[$index] . '</div>
                                     </div>
                                 </td>
                             </tr>';
-
+                $index++;
+                $num_registros++;
+                if($num_registros == 5){
+                    break;
+                }
+            }
         }
-                echo '</tbody>
-                </table>';
+        echo '</tbody>
+        </table>';
 
     }
     $conn->close();

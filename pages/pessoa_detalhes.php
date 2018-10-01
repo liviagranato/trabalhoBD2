@@ -47,8 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <?php }
 include_once "conexao.php";
-//$id = $_SESSION['Id'];
-$sql = "SELECT * FROM person WHERE Id = '1'";
+$id = $_GET['id'];
+$sql = "SELECT * FROM person WHERE id = '$id'";
 $result = $conn->query($sql);
 
 
@@ -58,85 +58,70 @@ if ($result->num_rows > 0) {
 
     while ($row = $result->fetch_assoc()) {
         $name = $row['name'];
-        $name_kanji = $row['name_kanji'];
-        $nickname = $row['nickname'];
+        $birthday= $row['birthday'];
         $about = $row['about'];
         $memberFavorites = $row['memberFavorites'];
-        $url = $row['Url'];
-        $img =$row['img'];
-
-        //FALTA ADICIONAR CURIOSIDADES (TABELA PERSON), DUBLADORES
+        $img =$row['image'];
+        $site =$row['websiteUrl'];
 
         echo '<h1 class="my-4">'.$name.'
-                        <small>'.$nickname.', '.$name_kanji.'</small>
                         </h1>
                         <div class="row row-personagem-detalhes">
-                            <div class="col-md-2 col-sm-6 mb-4 imagem-perfil-personagem">
+                            <div class="col-md-1 col-sm-6 mb-4 imagem-perfil-personagem">
                                 <a href="#">
                                     <img class="img-fluid"  src="'.$img.'" alt="">
                                 </a>
                             </div>
-                
-                            <div class="div-personagem-detalhes">
-                                <h3 class="my-2">Curiosidades</h3>
-                                Idade:  <br/>
-                                Aniversário:  <br/>
-                                Altura:  <br/>
-                                Servidão:  <br/>
-                                Signo:  <br/>
-                                Residência: Satte, <br/>
-                                Tipo Sanguíneo:  <br/>
-                                Matérias Preferidas: <br/>
-                                Piores matérias: <br/>
-                                Comida preferida:  <br/>
-                                Cor favorita:  <br/>
-                                Cor do cabelo:  <br/>
-                                Cor dos olhos:  <br/>
-                                Nome online:  <br/>
-                                <b>Favoritos: '.$memberFavorites.'</b> <br/>
-                            </div>
-                        </div>
-                
-                        <h3 class="my-3">Descrição</h3>
-                        <div class="row">
-                            <div class="descricao-texto-personagem" id="descricao-personagem">
-                                '.$about.'
-                                </div>
-                        </div>
-                
-                        <h3 class="my-4">Dubladores</h3>
-                        <div class="row img-dubladores">
-                            <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
-                                <a href="#">
-                                    <img class="img-fluid" src="../resource/dubladora1.jpg" alt="">
-                                </a>
-                                <div>
-                                    <h3>Hirano, Aya</h3>
-                                    <p>Japanese</p>
+                            <h3 class="my-3">Descrição</h3>
+                            <div class="row">
+                                <div class="col-md-11 col-sm-6 mb-4 descricao-texto-personagem" id="descricao-personagem">
+                                    '.$about.'
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
-                                <a href="#">
-                                    <img class="img-fluid" src="../resource/dubladora.jpg" alt="">
-                                </a>
-                                <div>
-                                    <h3>Lee, Wendee</h3>
-                                    <p>English</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
-                                <a href="#">
-                                    <img class="img-fluid" src="../resource/dubladora2.jpg" alt="">
-                                </a>
-                                <div>
-                                    <h3>Jeong, Yu Mi</h3>
-                                    <p>Korean</p>
-                                </div>
-                            </div>
-                </div>';
+                        </div>';
+
     }
 }
 
+$sql = "SELECT p.id, d.FK_Personagem_id, d.FK_Person_id, pe.id, pe.image, pe.name  FROM personagem as p left join dubla as d on p.id=d.FK_Personagem_id 
+left join person as pe on d.FK_Person_id=pe.id where p.id='$id'";
+$result = $conn->query($sql);
+$dubladores = array();
+$index = 0;
+$num_registros=0;
+if ($result->num_rows > 0) {
+    echo '<h3 class="my-4">Dubladores</h3>
+                        <div class="row img-dubladores">';
+
+
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $dubladores[$index] = $row['name'];
+        $dubladoresFoto[$index] = $row['image'];
+
+        if (!$dubladores[$index]) {
+
+        } else {
+            echo ' 
+                 <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
+                    <a href="#">
+                        <img class="img-fluid" src="'.$dubladoresFoto[$index].'" alt="">
+                    </a>
+                    <div>
+                        <h4>'.$dubladores[$index].'</h4>
+                    </div>
+                </div>';
+            $index++;
+            $num_registros++;
+            if($num_registros == 5){
+                break;
+            }
+        }
+    }
+    echo '</tbody>
+        </table>';
+
+}
 $conn->close();
 ?>
 

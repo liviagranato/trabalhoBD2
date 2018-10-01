@@ -89,11 +89,11 @@ if ($result->num_rows > 0) {
                 $titulo = $row['title'];
                 $url_img = $row['img_url'];
                 $id = $row['Id'];
-                $_SESSION['Id'] = $id;
+
 
                 echo
                     '<div class="col-sm-3">
-                        <div class="card card-imagem" onclick="window.location.href=\'animes_detalhes.php\'">
+                        <div class="card card-imagem" onclick="window.location.href=\'animes_detalhes.php?id='.$id.'\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
                     </div>

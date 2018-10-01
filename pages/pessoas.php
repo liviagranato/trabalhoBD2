@@ -85,13 +85,12 @@ if ($result->num_rows > 0) {
     for ($i=0; $i<$aux; $i++){
         echo '<div class="row">';
         while ($row = $result->fetch_assoc()) {
-
             $titulo = $row['name'];
             $url_img = $row['image'];
-
+            $id = $row['id'];
             echo
                 '<div class="col-sm-3">
-                        <div class="card card-imagem" onclick="window.location.href=\'pessoa_detalhes.php\'">
+                        <div class="card card-imagem" onclick="window.location.href=\'pessoa_detalhes.php?id='.$id.'\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
                     </div>
