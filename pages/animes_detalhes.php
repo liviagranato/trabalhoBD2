@@ -49,6 +49,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php }
     include_once "conexao.php";
     $id = $_GET['id'];
+    $generos ='';
+    $consulta_generos = "SELECT a.Id, ga.FK_anime_id, ga.FK_genre_id, g.id_genre, g.nome FROM anime as a LEFT JOIN genre_anime as ga on a.Id = ga.FK_anime_id left join genre as g on ga.FK_genre_id = g.id_genre WHERE a.Id = '$id'";
+    $resultado_generos = $conn->query($consulta_generos);
+    if ($resultado_generos->num_rows > 0){
+        while ($row = $resultado_generos->fetch_assoc()){
+            $generos .= $row['nome'].'; ';
+        }
+    }
+
     $sql = "SELECT * FROM anime WHERE Id = '$id'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
@@ -75,7 +84,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $synopses = $row['synopses'];
             $premiered = $row['premiered'];
             $broadcast = $row['broadcast'];
-            //FALTA ADICIONAR PRODUTORES, LICENSORS,STUDIOS, GENEROS, TEMA ABERTURA, TEMA FECHAMENTO, ANIMES RELACIONADOS, DUBLADORES(TABELA)
 
             echo '<h1 class="my-4">'.$titulo.'</h1>
                     <div class="row info-cell">
@@ -109,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             Premier: '.$premiered.'<br/>
                             Transmissão: '.$broadcast.'<br/>
                             Fonte: '.$source_type.'<br/>
-                            Gêneros: <br/>
+                            Gêneros: '.$generos.'<br/>
                             Duração: '.$duration.'<br/>
                             Avaliação: '.$rating.'<br/>
                         </div>

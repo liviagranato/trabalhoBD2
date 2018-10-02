@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4275a9ed-5ee7-4b06-abd3-1bc6b2f2be85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/ranking_anime.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/ranking_manga.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/cadastro.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/cadastro.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/funcoes.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/funcoes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/personagem_detalhes.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/personagem_detalhes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/pessoa_detalhes.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/pessoa_detalhes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ranking.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/animes_detalhes.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/animes_detalhes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/manga_detalhes.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/manga_detalhes.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +87,7 @@
           <entry key="css" value="10" />
           <entry key="jpg" value="3" />
           <entry key="json" value="6" />
-          <entry key="php" value="237" />
+          <entry key="php" value="239" />
           <entry key="rnc" value="1" />
           <entry key="ts" value="1" />
           <entry key="txt" value="2" />
@@ -105,7 +98,7 @@
           <entry key="CSS" value="10" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="6" />
-          <entry key="PHP" value="237" />
+          <entry key="PHP" value="239" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="RNG Compact" value="1" />
           <entry key="TypeScript" value="1" />
@@ -114,14 +107,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="3466" />
-          <entry key="php" value="16454" />
+          <entry key="php" value="17051" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="3466" />
           <entry key="HTML" value="91" />
-          <entry key="PHP" value="16359" />
+          <entry key="PHP" value="16956" />
           <entry key="SQL" value="4" />
         </counts>
       </usages-collector>
@@ -130,25 +123,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/ranking_manga.php">
+        <entry file="file://$PROJECT_DIR$/pages/animes_detalhes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
-              <folding>
-                <element signature="n#style#0;n#i#0;n#p#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="51" selection-start-line="51" selection-end-line="58" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/ranking_anime.php">
+        <entry file="file://$PROJECT_DIR$/pages/manga_detalhes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
-              <folding>
-                <element signature="n#style#0;n#i#0;n#p#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="126" column="40" selection-start-line="126" selection-start-column="40" selection-end-line="126" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -191,11 +178,9 @@
         <option value="$PROJECT_DIR$/pages/temporada.php" />
         <option value="$PROJECT_DIR$/pages/pessoas.php" />
         <option value="$PROJECT_DIR$/pages/personagem.php" />
-        <option value="$PROJECT_DIR$/pages/manga_detalhes.php" />
         <option value="$PROJECT_DIR$/pages/manga.php" />
         <option value="$PROJECT_DIR$/pages/index.php" />
         <option value="$PROJECT_DIR$/pages/cronograma.php" />
-        <option value="$PROJECT_DIR$/pages/animes_detalhes.php" />
         <option value="$PROJECT_DIR$/pages/anime.php" />
         <option value="$PROJECT_DIR$/pages/pessoa_detalhes.php" />
         <option value="$PROJECT_DIR$/pages/personagem_detalhes.php" />
@@ -204,8 +189,10 @@
         <option value="$PROJECT_DIR$/pages/funcoes.php" />
         <option value="$PROJECT_DIR$/pages/ranking.php" />
         <option value="$PROJECT_DIR$/pages/navbar.php" />
-        <option value="$PROJECT_DIR$/pages/ranking_manga.php" />
         <option value="$PROJECT_DIR$/pages/ranking_anime.php" />
+        <option value="$PROJECT_DIR$/pages/ranking_manga.php" />
+        <option value="$PROJECT_DIR$/pages/animes_detalhes.php" />
+        <option value="$PROJECT_DIR$/pages/manga_detalhes.php" />
       </list>
     </option>
   </component>
@@ -306,12 +293,12 @@
       <workItem from="1538197607972" duration="6339000" />
       <workItem from="1538248069685" duration="4115000" />
       <workItem from="1538257380625" duration="38413000" />
-      <workItem from="1538440937384" duration="6273000" />
+      <workItem from="1538440937384" duration="8172000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135908000" />
+    <option name="totallyTimeSpent" value="137807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -495,13 +482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/manga_detalhes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/manga.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -575,13 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/animes_detalhes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CSS/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -603,23 +576,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/ranking_manga.php">
+    <entry file="file://$PROJECT_DIR$/pages/ranking_anime.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+        <state relative-caret-position="-68">
+          <caret line="59" column="48" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
           <folding>
             <element signature="n#style#0;n#i#0;n#p#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/ranking_anime.php">
+    <entry file="file://$PROJECT_DIR$/pages/ranking_manga.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+        <state relative-caret-position="289">
+          <caret line="80" column="159" selection-start-line="80" selection-start-column="159" selection-end-line="80" selection-end-column="159" />
           <folding>
             <element signature="n#style#0;n#i#0;n#p#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/animes_detalhes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="51" selection-start-line="51" selection-end-line="58" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/manga_detalhes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="126" column="40" selection-start-line="126" selection-start-column="40" selection-end-line="126" selection-end-column="40" />
         </state>
       </provider>
     </entry>

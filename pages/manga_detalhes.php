@@ -48,6 +48,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php }
     include_once "conexao.php";
     $id = $_GET['id'];
+    $generos ='';
+    $consulta_generos = "SELECT m.id, gm.FK_manga_id, gm.FK_genre_id, g.id_genre, g.nome FROM manga as m LEFT JOIN genre_manga as gm on m.id = gm.FK_manga_id left join genre as g on gm.FK_genre_id = g.id_genre WHERE m.id = '$id'";
+    $resultado_generos = $conn->query($consulta_generos);
+    if ($resultado_generos->num_rows > 0){
+        while ($row = $resultado_generos->fetch_assoc()){
+            $generos .= $row['nome'].'; ';
+        }
+    }
+
+    $autores ='';
+    $consulta_autores = "SELECT m.id, ma.FK_manga_id, ma.FK_author_id, a.authors_PK, a.name  FROM manga as m LEFT JOIN manga_author as ma on m.id = ma.FK_manga_id left join author as a on ma.FK_author_id = a.authors_PK WHERE m.id = '$id'";
+    $resultado_autores = $conn->query($consulta_autores);
+    if ($resultado_autores->num_rows > 0){
+        while ($row = $resultado_autores->fetch_assoc()){
+            $autores .= $row['name'].'; ';
+        }
+    }
+
     $sql = "SELECT * FROM manga WHERE id = '$id'";
     $result = $conn->query($sql);
 
@@ -74,8 +92,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $scored_by = $row['scored_by'];
             $rank  = $row['rank'];
             $broadcast = $row['broadcast'];
-
-            //FALTA ADICIONAR GENEROS, AUTORES, SERIALIZAÇÃO, TITULOS SINONIMOS, PERSONAGENS (TABELA) , MANGAS RELACIONADOS
 
             echo '<h1 class="my-4">'.$titulo.'</h1>
                     <div class="row info-cell">
@@ -107,8 +123,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             Capítulos: '.$chapter.'<br/>
                             Status: '.$status.'<br/>
                             Publicado em: '.$published.'<br/>
-                            Gêneros: <br/>
-                            Autores: <br/>
+                            Gêneros: '.$generos.'<br/>
+                            Autores: '.$autores.'<br/>
                         </div>
                 
                         <div class="div-estatisticas-manga">
