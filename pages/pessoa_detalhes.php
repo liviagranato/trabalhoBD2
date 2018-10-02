@@ -62,7 +62,6 @@ if ($result->num_rows > 0) {
         $about = $row['about'];
         $memberFavorites = $row['memberFavorites'];
         $img =$row['image'];
-        $site =$row['websiteUrl'];
 
         echo '<h1 class="my-4">'.$name.'
                         </h1>
