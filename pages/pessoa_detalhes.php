@@ -19,7 +19,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Consultar</title>
+    <title>Detalhes Staff</title>
 </head>
 <body>
 <?php
@@ -90,7 +90,7 @@ $dubladores = array();
 $index = 0;
 $num_registros=0;
 if ($result->num_rows > 0) {
-    echo '<h3 class="my-4">Dubladores</h3>
+    echo '<h3 class="my-4">Personagens Dublados</h3>
                         <div class="row img-dubladores">';
 
 

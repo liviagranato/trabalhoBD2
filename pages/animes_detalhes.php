@@ -19,7 +19,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Consultar</title>
+    <title>Detalhes Animes</title>
 </head>
 <body>
 <?php
@@ -58,7 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $titulo = $row['title'];
             $titulo_eng = $row['title_eng'];
             $titulo_jap = $row['title_jap'];
-            $title_synonyms = $row['title_synonyms'];
             $url_img = $row['img_url'];
             $type = $row['type'];
             $source_type =$row['source_type'];
@@ -109,9 +108,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             Estreado em: '.$aired_string.'<br/>
                             Premier: '.$premiered.'<br/>
                             Transmissão: '.$broadcast.'<br/>
-                            Produtores: <br/>                                                                        
-                            Licenciadores: <br/>
-                            Estúdios: <br/>
                             Fonte: '.$source_type.'<br/>
                             Gêneros: <br/>
                             Duração: '.$duration.'<br/>
@@ -128,7 +124,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
                             <h3 class="my-3">Títulos Alternativos</h3>
                             Inglês: '.$titulo_eng.'<br/>
-                            Sinônimos: '.$title_synonyms.'<br/>
                             Japonês: '.$titulo_jap.'<br/>
                         </div>
                     </div>
@@ -139,31 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
                     
                     
-                    <div class="left">
-                        <h3 class="my-3">Tema de Abertura</h3>
-                            <div class="row">
-                                <div class="descricao-texto-personagem">
-                                   
-                                </div>
-                            </div>
-                            <h3 class="my-3">Tema de Encerramento</h3>
-                            <div class="row">
-                                <div class="descricao-texto-personagem">
-                                    
-                                    <br/><br/><br/>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="right">
-                            <h3 class="my-3">Animes Relacionados</h3>
-                            <div class="row">
-                                <div class="descricao-texto-personagem">
-                                    
-                    
-                                </div>
-                            </div>
-                        </div>
+                   
                 </div>';
         }
 

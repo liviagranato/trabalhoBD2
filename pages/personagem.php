@@ -20,7 +20,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Consultar</title>
+    <title>Personagem</title>
 </head>
 <body>
 <?php

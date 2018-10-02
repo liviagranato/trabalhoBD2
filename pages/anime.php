@@ -21,7 +21,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Consultar</title>
+    <title>Animes</title>
 </head>
 <body>
 <?php

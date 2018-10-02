@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/style.css">
-    <title>Hello, world!</title>
+    <title>Início</title>
 </head>
 <body class="background-index">
 <?php include 'navbar.php';
@@ -17,8 +17,8 @@ require_once "../vendor/autoload.php"; // require your composer autoloader file 
 
 $jikan = new Jikan\Jikan;
 
-/*for ($i=1; $i<2; $i++){
-    var_dump($jikan->AnimeCharacterStaff($i)->response); // get anime with ID 1 on MAL
+for ($i=1; $i<=1; $i++){
+    var_dump($jikan->Anime($i)->response); // get anime with ID 1 on MAL
       try {
         $jikan->Anime($i);
           echo '<script>';
@@ -27,7 +27,7 @@ $jikan = new Jikan\Jikan;
     } catch (Exception $e) {
         echo 'Caught exception: ', $e->getMessage(); // "File does not exist" (the anime with this ID doesn't exist on MAL)
     }
-}*/
+}
 ?>
 
 <div>

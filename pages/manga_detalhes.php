@@ -19,7 +19,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Consultar</title>
+    <title>Detalhes Manga</title>
 </head>
 <body>
 <?php
@@ -109,7 +109,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             Publicado em: '.$published.'<br/>
                             Gêneros: <br/>
                             Autores: <br/>
-                            Serialização: <br/>
                         </div>
                 
                         <div class="div-estatisticas-manga">
@@ -122,7 +121,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
                             <h3 class="my-3">Títulos Alternativos</h3>
                             Inglês: '.$titulo_eng.'<br/>
-                            Sinônimos: <br/>
                             Japonês: '.$titulo_jap.'<br/>
                 
                         </div>
@@ -134,17 +132,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </div>
                         </div>
                     
-                        <div class="my-4">
-                            <h3 class="my-3">Mangas Relacionados</h3>
-                            <div class="row">
-                                <div class="descricao-texto-personagem">
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    
-                    
-                   
                 </div>';
         }
 

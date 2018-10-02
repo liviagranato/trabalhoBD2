@@ -19,7 +19,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Consultar</title>
+    <title>Detalhes Personagens</title>
 </head>
 <body>
 <?php
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-$sql = "SELECT p.id, d.FK_Personagem_id, d.FK_Person_id, pe.id, pe.image, pe.name  FROM personagem as p left join dubla as d on p.id=d.FK_Personagem_id 
+$sql = "SELECT p.id, d.FK_Personagem_id, d.FK_Person_id, pe.id as id_person, pe.image, pe.name  FROM personagem as p left join dubla as d on p.id=d.FK_Personagem_id 
 left join person as pe on d.FK_Person_id=pe.id where p.id='$id'";
 $result = $conn->query($sql);
 $dubladores = array();
@@ -99,15 +99,13 @@ if ($result->num_rows > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $dubladores[$index] = $row['name'];
         $dubladoresFoto[$index] = $row['image'];
-
+        $id_person = $row['id_person'];
         if (!$dubladores[$index]) {
 
         } else {
             echo ' 
-                 <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores">
-                    <a href="#">
-                        <img class="img-fluid" src="'.$dubladoresFoto[$index].'" alt="">
-                    </a>
+                 <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores" onclick="window.location.href=\'pessoa_detalhes.php?id='.$id_person.'\'">                   
+                    <img class="img-fluid" src="'.$dubladoresFoto[$index].'" alt="">                 
                     <div>
                         <h4>'.$dubladores[$index].'</h4>
                     </div>
