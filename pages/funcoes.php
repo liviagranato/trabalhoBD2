@@ -23,11 +23,12 @@ function buscar($nome, $tabela){
                 echo '<div class="row">';
                 while ($row = $result->fetch_assoc()) {
                     $titulo = $row['name'];
+                    $id = $row['id'];
                     if($tabela ==='personagem'){
                         $url_img = $row['img'];
                         echo
                             '<div class="col-sm-3">
-                        <div class="card card-imagem" onclick="window.location.href=\'personagem_detalhes.php\'">
+                        <div class="card card-imagem" onclick="window.location.href=\'personagem_detalhes.php?id='.$id.'\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
                     </div>
@@ -37,7 +38,7 @@ function buscar($nome, $tabela){
                         $url_img = $row['image'];
                         echo
                             '<div class="col-sm-3">
-                        <div class="card card-imagem" onclick="window.location.href=\'pessoa_detalhes.php\'">
+                        <div class="card card-imagem" onclick="window.location.href=\'pessoa_detalhes.php?id='.$id.'\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
                     </div>
@@ -62,20 +63,22 @@ function buscar($nome, $tabela){
                 while ($row = $result->fetch_assoc()) {
                     $titulo = $row['title'];
                     if ($tabela === 'manga'){
+                        $id = $row['id'];
                         $url_img = $row['img'];
                         echo
                             '<div class="col-sm-3">
-                        <div class="card card-imagem" onclick="window.location.href=\'manga_detalhes.php\'">
+                        <div class="card card-imagem" onclick="window.location.href=\'manga_detalhes.php?id='.$id.'\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
                         </div>
                         </div>';
                     }
                     if ($tabela === 'anime'){
+                        $id = $row['Id'];
                         $url_img = $row['img_url'];
                         echo
                             '<div class="col-sm-3">
-                        <div class="card card-imagem" onclick="window.location.href=\'anime_detalhes.php\'">
+                        <div class="card card-imagem" onclick="window.location.href=\'animes_detalhes.php?id='.$id.'\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
                         </div>

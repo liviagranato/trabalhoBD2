@@ -17,6 +17,15 @@
                     <a class="dropdown-item" href="pessoas.php">Staff</a>
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ranking (Score)
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="ranking_anime.php">Top 100 Anime</a>
+                    <a class="dropdown-item" href="ranking_manga.php">Top 100 Manga</a>
+                </div>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="temporada.php">Temporada</a>
             </li>

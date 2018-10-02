@@ -19,6 +19,11 @@
         <br/>
         <p id="profile-name" class="profile-name-card"></p>
         <form class="form-signin" method="post" action="cadastro.php">
+            <label for="select">Tipo de Usuário *</label>
+            <select id="select" name="select" class="form-control">
+                <option value="1">Administrador</option>
+                <option value="2">Comum</option>
+            </select>
             <span id="reauth-email" class="reauth-email"></span>
             <label for="inputEmail">Email *</label>
             <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email" required autofocus>
@@ -26,7 +31,7 @@
             <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Senha" required>
             <label for="inputPasswordConfirm">Confirmar Senha *</label>
             <input type="password" id="inputPasswordConfirm" class="form-control" name="inputPasswordConfirm" placeholder="Confirmar Senha" required>
-            <br/><br/>
+
             <button class="btn-2 btn-lg btn-primary btn-block btn-signin" type="submit" value="registrar" name="registrar">Registrar</button>
         </form><!-- /form -->
     </div><!-- /card-container -->
@@ -39,6 +44,7 @@ if(isset($login_cookie)){
 
 
     if (isset($_POST['registrar'])) {
+        $tipo = $_POST['select'];
         $login = $_POST['inputEmail'];
         $senha = ($_POST['inputPassword']);
         $senha2 = $_POST['inputPasswordConfirm'];
@@ -49,7 +55,7 @@ if(isset($login_cookie)){
                 echo "<script language='javascript' type='text/javascript'>alert('Email já cadastrado!');window.location.href='cadastro.php';</script>";
                 die();
             } else {
-                $sql = "INSERT INTO usuario (email, senha, funcao) VALUES ('$login', '$senha', '2')";
+                $sql = "INSERT INTO usuario (email, senha, funcao) VALUES ('$login', '$senha', '$tipo')";
                 $result = $conn->query($sql);
                 if ($result) {
                     echo "<script language='javascript' type='text/javascript'>alert('Cadastro realizado com sucesso!');</script>";

@@ -105,7 +105,7 @@ if ($result->num_rows > 0) {
         } else {
             echo ' 
                  <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores" onclick="window.location.href=\'pessoa_detalhes.php?id='.$id_person.'\'">                   
-                    <img class="img-fluid" src="'.$dubladoresFoto[$index].'" alt="">                 
+                    <a href="#"><img class="img-fluid" src="'.$dubladoresFoto[$index].'" alt=""></a>           
                     <div>
                         <h4>'.$dubladores[$index].'</h4>
                     </div>
