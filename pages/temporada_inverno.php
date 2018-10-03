@@ -14,58 +14,58 @@
 <?php include 'navbar.php';?>
 <nav class="nav">
     <a class="nav-link" href="temporada_outono.php">Outono 2018</a>
-    <a class="nav-link " href="temporada_inverno.php">Inverno 2018</a>
-    <a class="nav-link active" href="temporada.php">Primavera 2018</a>
+    <a class="nav-link active" href="temporada_inverno.php">Inverno 2018</a>
+    <a class="nav-link " href="temporada.php">Primavera 2018</a>
     <a class="nav-link" href="temporada_verao.php">Verão 2018</a>
 </nav>
 <div class="container2">
 
-    <?php
-    include_once "conexao.php";
-    include "funcoes.php";
+<?php
+include_once "conexao.php";
+include "funcoes.php";
 
 
-    $sql = "SELECT * FROM anime where premiered = 'spring2018'";
-    $result = $conn->query($sql);
-    $count=0;
+    $sql = "SELECT * FROM anime where premiered = 'winter2018'";
+$result = $conn->query($sql);
+$count=0;
 
-    if ($result->num_rows > 0) {
-        $aux = ceil(($result->num_rows)/4);
-        ob_start();
-        echo '<div class="container">';
-        for ($i=0; $i<$aux; $i++){
-            echo '<div class="row">';
-            while ($row = $result->fetch_assoc()) {
+if ($result->num_rows > 0) {
+    $aux = ceil(($result->num_rows)/4);
+    ob_start();
+    echo '<div class="container">';
+    for ($i=0; $i<$aux; $i++){
+        echo '<div class="row">';
+        while ($row = $result->fetch_assoc()) {
 
-                $titulo = $row['title'];
-                $rank = $row['rank'];
-                $score = $row['score'];
-                $url_img = $row['img_url'];
-                $id = $row['Id'];
-                echo
-                    '<div class="col-sm-3">
+            $titulo = $row['title'];
+            $rank = $row['rank'];
+            $score = $row['score'];
+            $url_img = $row['img_url'];
+            $id = $row['Id'];
+            echo
+                '<div class="col-sm-3">
                         <div class="card card-imagem" onclick="window.location.href=\'animes_detalhes.php?id='.$id.'\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">#'.$rank.'  ' . $titulo . ' - <i class="fa fa-star" style="color: yellow"> '.$score.'</i></p></div>
                     </div>
                 </div>';
 
-            }
-            echo '</div>';
         }
         echo '</div>';
     }
+    echo '</div>';
+}
 
-    $conn->close();
-    if (isset($_GET['submit'])) {
-        $nome = $_GET['busca'];
-        if($nome!='') {
+$conn->close();
+if (isset($_GET['submit'])) {
+    $nome = $_GET['busca'];
+    if($nome!='') {
 
-            buscar($nome, 'anime');
-        }
+        buscar($nome, 'anime');
     }
-    ?>
-</div>
+}
+?>
+    </div>
 </div>
 
 <!-- Optional JavaScript -->
