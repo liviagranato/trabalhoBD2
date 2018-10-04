@@ -146,9 +146,8 @@
         $anime['scored_by'] . "','" . $anime['rank'] . "','" .
         $anime['popularity'] . "','" . $anime['members'] . "','" .
         $anime['favorites'] . "','" . $anime['synopsis'] . "','" .
-        $anime['premiered'] . "','" . $anime['studio'] . "','" .
-        $anime['genre'] . "','" . $anime['opening_theme'] . "','" .
-        $anime['ending_theme'] . "')";
+        $anime['premiered'] . "','" . $anime['broadcast'] . "'," .
+        $manga . ")";
         echo $sql;
         if (!$db->query($sql)){
             echo '<script>';
