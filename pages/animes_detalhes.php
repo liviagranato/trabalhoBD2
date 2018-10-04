@@ -20,6 +20,7 @@
 <head>
     <meta charset="utf-8">
     <title>Detalhes Animes</title>
+
 </head>
 <body>
 <?php
@@ -41,9 +42,63 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo '<p><a href="principal.php">Pagina inicial</a></p>' . "\n";
 } else { ?>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-<nav class="nav">
-    <a class="nav-detalhes-personagem">Detalhes do Anime</a>
-</nav>
+
+<div class="container">
+
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">Lucky Star</h1>
+    <div class="row info-cell">
+        <div class="info-cell-row col-md-9 col-md-push-3">
+            <div class="row">
+                <div class="col">
+                    <b>SCORE</b>
+                    <div class="text-score">7.82</div>
+                    <div class="text-users">193,339 users</div>
+                </div>
+                <div class="col ">Ranked <b>#850</b></div>
+                <div class="col ">Popularity <b>#142</b></div>
+                <div class="col ">Members <b>393,186</b></div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-anime-detalhes">
+
+        <div class="imagem-perfil-anime">
+            <a href="#">
+                <img class="img-fluid"  src="../resource/lucky-star.jpg" alt="">
+            </a>
+        </div>
+
+        <div class="div-informacao-anime">
+            <h3 class="my-3">Informação</h3>
+            Type: TV<br/>
+            Episodes: 24<br/>
+            Status: Finished Airing<br/>
+            Aired: Apr 8, 2007 to Sep 17, 2007<br/>
+            Premiered: Spring 2007<br/>
+            Broadcast: Mondays at 00:00 (JST)<br/>
+            Producers: Lantis, Rakuonsha, Lucky Paradise<br/>
+            Licensors: Funimation, Bandai Entertainment, Kadokawa Pictures USA<br/>
+            Studios: Kyoto Animation<br/>
+            Source: 4-koma manga<br/>
+            Genres: Slice of Life, Comedy, Parody, School<br/>
+            Duration: 24 min. per ep.<br/>
+            Rating: PG-13 - Teens 13 or older<br/>
+        </div>
+
+        <div class="div-estatisticas-anime">
+            <h3 class="my-3">Estatísticas</h3>
+            Score: 7.821 (scored by 193,339 users)<br/>
+            Ranked: #8502<br/>
+            Popularity: #142<br/>
+            Members: 393,183<br/>
+            Favorites: 9,816<br/>
+
+            <h3 class="my-3">Títulos Alternativos</h3>
+            English: Lucky☆Star<br/>
+            Synonyms: Lucky Star<br/>
+            Japanese: らき☆すた<br/>
+
 
 
     <?php }

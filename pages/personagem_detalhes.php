@@ -20,6 +20,7 @@
 <head>
     <meta charset="utf-8">
     <title>Detalhes Personagens</title>
+
 </head>
 <body>
 <?php
@@ -123,6 +124,7 @@ if ($result->num_rows > 0) {
 }
         $conn->close();
         ?>
+
 
 </body>
 </html>
