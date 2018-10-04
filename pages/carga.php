@@ -59,6 +59,80 @@
             $author = $db->insert_id;
         }
 
+        //TODO: continuar
+        $sql = "INSERT INTO person VALUES(" . $anime["?"]  . ", ". $anime["?"] .")";
+        if (!$db->query($sql)){
+            echo '<script>';
+            echo 'console.log(';
+            echo "\"Erro na execução da query\"";
+            echo ');';
+            echo '</script>';
+        }
+        else {
+            $person = $db->insert_id;
+        }
+
+        $sql = "INSERT INTO personagem VALUES(' " . $anime['author']['name'] . "')";
+        if (!$db->query($sql)){
+            echo '<script>';
+            echo 'console.log(';
+            echo "\"Erro na execução da query\"";
+            echo ');';
+            echo '</script>';
+        }
+        else {
+            $personagem = $db->insert_id;
+        }
+
+
+        $sql = "INSERT INTO dubla VALUES(" . $person . ", ". $personagem .")";
+        if (!$db->query($sql)){
+            echo '<script>';
+            echo 'console.log(';
+            echo "\"Erro na execução da query\"";
+            echo ');';
+            echo '</script>';
+        }
+        else {
+            $dubla = $db->insert_id;
+        }
+
+        $sql = "INSERT INTO genre VALUES(' " . $anime['author']['name'] . "')";
+        if (!$db->query($sql)){
+            echo '<script>';
+            echo 'console.log(';
+            echo "\"Erro na execução da query\"";
+            echo ');';
+            echo '</script>';
+        }
+        else {
+            $genre = $db->insert_id;
+        }
+
+        $sql = "INSERT INTO manga VALUES(' " . $anime['author']['name'] . "')";
+        if (!$db->query($sql)){
+            echo '<script>';
+            echo 'console.log(';
+            echo "\"Erro na execução da query\"";
+            echo ');';
+            echo '</script>';
+        }
+        else {
+            $manga = $db->insert_id;
+        }
+
+        $sql = "INSERT INTO faz VALUES(" . $person . ", ". $manga .")";
+        if (!$db->query($sql)){
+            echo '<script>';
+            echo 'console.log(';
+            echo "\"Erro na execução da query\"";
+            echo ');';
+            echo '</script>';
+        }
+        else {
+            $faz = $db->insert_id;
+        }
+
 
         $sql = "INSERT INTO anime VALUES(" .$anime['mal_id'] . ",'" .
         $anime['link_canonical'] . "','" . $anime['title'] . "','" .
@@ -76,13 +150,54 @@
         $anime['genre'] . "','" . $anime['opening_theme'] . "','" .
         $anime['ending_theme'] . "')";
         echo $sql;
-        //if (!$db->query($sql)){
-        //    echo '<script>';
-           // echo 'console.log(';
-            //echo "Erro na execução da query";
-            //echo ');';
-          //  echo '</script>';
-        //}
+        if (!$db->query($sql)){
+            echo '<script>';
+            echo 'console.log(';
+            echo "Erro na execução da query";
+            echo ');';
+            echo '</script>';
+        }
+        else{
+            $anime = $db->insert_id;
+        }
+
+        $sql = "INSERT INTO genre_manga VALUES(" . $manga . ", ". $genre .")";
+        if (!$db->query($sql)){
+            echo '<script>';
+            echo 'console.log(';
+            echo "\"Erro na execução da query\"";
+            echo ');';
+            echo '</script>';
+        }
+        else {
+            $genre_manga = $db->insert_id;
+        }
+
+        $sql = "INSERT INTO genre_anime VALUES(" . $anime . ", ". $genre .")";
+        if (!$db->query($sql)){
+            echo '<script>';
+            echo 'console.log(';
+            echo "\"Erro na execução da query\"";
+            echo ');';
+            echo '</script>';
+        }
+        else {
+            $genre_anime = $db->insert_id;
+        }
+
+        $sql = "INSERT INTO manga_author VALUES(" . $manga . ", ". $author .")";
+        if (!$db->query($sql)){
+            echo '<script>';
+            echo 'console.log(';
+            echo "\"Erro na execução da query\"";
+            echo ');';
+            echo '</script>';
+        }
+        else {
+            $manga_author = $db->insert_id;
+        }
+
+
     }
     $db->close();
     echo"<h3>Obrigado. Seus dados foram inseridos</h3> \n";
