@@ -21,7 +21,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Animes</title>
+    <title>Staff</title>
 </head>
 <body>
 <?php
@@ -49,11 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <br/>
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
-                <form method="get" action="anime.php">
+                <form method="get" action="pessoas.php">
                     <div class="card-body row no-gutters align-items-center">
                         <!--end of col-->
                         <div class="col">
-                            <input class="form-control form-control-lg" name="busca" id="busca" type="search" placeholder="Buscar Anime">
+                            <input class="form-control form-control-lg" name="busca" id="busca" type="search" placeholder="Buscar Pessoas">
                         </div>
                         <!--end of col-->
                         <div class="col-auto">
@@ -74,7 +74,7 @@ include_once "conexao.php";
 include "funcoes.php";
 
 
-$sql = "SELECT * FROM anime";
+$sql = "SELECT * FROM person";
 $result = $conn->query($sql);
 $count=0;
 $num_registros=0;
@@ -82,27 +82,24 @@ if ($result->num_rows > 0) {
     $aux = ceil(($result->num_rows)/4);
     ob_start();
     echo '<div class="container">';
-        for ($i=0; $i<$aux; $i++){
-            echo '<div class="row">';
-            while ($row = $result->fetch_assoc()) {
-
-                $titulo = $row['title'];
-                $url_img = $row['img_url'];
-                $id = $row['Id'];
-
-
-                echo
-                    '<div class="col-sm-3">
-                        <div class="card card-imagem" onclick="window.location.href=\'animes_detalhes.php?id='.$id.'\'">
+    for ($i=0; $i<$aux; $i++){
+        echo '<div class="row">';
+        while ($row = $result->fetch_assoc()) {
+            $titulo = $row['name'];
+            $url_img = $row['image'];
+            $id = $row['id'];
+            echo
+                '<div class="col-sm-3">
+                        <div class="card card-imagem" onclick="window.location.href=\'pessoa_detalhes.php?id='.$id.'\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
                             <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
                     </div>
                 </div>';
-                $num_registros++;
-                if ($num_registros == 20) break;
-            }
-            echo '</div>';
+            $num_registros++;
+            if ($num_registros == 20) break;
         }
+        echo '</div>';
+    }
     echo '</div>';
 }
 
@@ -111,7 +108,7 @@ if (isset($_GET['submit'])) {
     $nome = $_GET['busca'];
     if($nome!='') {
 
-        buscar($nome, 'anime');
+        buscar($nome, 'person');
     }
 }
 ?>

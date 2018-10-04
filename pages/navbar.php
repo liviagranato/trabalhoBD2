@@ -14,6 +14,16 @@
                     <a class="dropdown-item" href="anime.php">Anime</a>
                     <a class="dropdown-item" href="manga.php">Manga</a>
                     <a class="dropdown-item" href="personagem.php">Personagem</a>
+                    <a class="dropdown-item" href="pessoas.php">Staff</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ranking (Score)
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="ranking_anime.php">Top 100 Anime</a>
+                    <a class="dropdown-item" href="ranking_manga.php">Top 100 Manga</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -28,5 +38,25 @@
 <!--            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
 <!--            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
 <!--        </form>-->
-    </div>
-</nav>
+
+
+
+
+<?php
+$funcao = $_COOKIE['inputFuncao'];
+echo '<div class="right">
+        <lu class="navbar-nav mr-auto">
+            <li class="nav-item right">
+                <a class="nav-link" href="logout.php">Logout</a>
+            </li>
+        
+    ';
+
+if (isset($_COOKIE['inputFuncao']) && $_COOKIE['inputFuncao'] == '1') {
+    echo '<li class="nav-item right">
+                <a class="nav-link" href="cadastro.php">Cadastro</a>
+            </li>
+        ';
+}
+echo '</lu></div></div></nav>';
+?>

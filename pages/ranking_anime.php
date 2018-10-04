@@ -21,7 +21,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Animes</title>
+    <title>Ranking de Animes</title>
 </head>
 <body>
 <?php
@@ -45,64 +45,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <div class="container">
-        <br/>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
-                <form method="get" action="anime.php">
-                    <div class="card-body row no-gutters align-items-center">
-                        <!--end of col-->
-                        <div class="col">
-                            <input class="form-control form-control-lg" name="busca" id="busca" type="search" placeholder="Buscar Anime">
-                        </div>
-                        <!--end of col-->
-                        <div class="col-auto">
-                            <button class="btn btn-lg btn-success" type="submit" name="submit" value="submit" id="submit">Buscar</button>
-                        </div>
-                        <!--end of col-->
-                    </div>
-                </form>
+        <div class="container">
+            <br/>
+                <h1 class="my-5">Top 100 Animes<h1>
+                <!--end of col-->
             </div>
-            <!--end of col-->
         </div>
-    </div>
-
-
 
 <?php }
 include_once "conexao.php";
 include "funcoes.php";
 
 
-$sql = "SELECT * FROM anime";
+$sql = "SELECT * FROM anime where rank between 1 and 100 order by rank ASC";
 $result = $conn->query($sql);
 $count=0;
-$num_registros=0;
+
 if ($result->num_rows > 0) {
     $aux = ceil(($result->num_rows)/4);
     ob_start();
     echo '<div class="container">';
-        for ($i=0; $i<$aux; $i++){
-            echo '<div class="row">';
-            while ($row = $result->fetch_assoc()) {
+    for ($i=0; $i<$aux; $i++){
+        echo '<div class="row">';
+        while ($row = $result->fetch_assoc()) {
 
-                $titulo = $row['title'];
-                $url_img = $row['img_url'];
-                $id = $row['Id'];
-
-
-                echo
-                    '<div class="col-sm-3">
+            $titulo = $row['title'];
+            $rank = $row['rank'];
+            $score = $row['score'];
+            $url_img = $row['img_url'];
+            $id = $row['Id'];
+            echo
+                '<div class="col-sm-3">
                         <div class="card card-imagem" onclick="window.location.href=\'animes_detalhes.php?id='.$id.'\'">
                             <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
-                            <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
+                            <div class="div-titulo"><p class="titulo">#'.$rank.'  ' . $titulo . ' - <i class="fa fa-star" style="color: yellow"> '.$score.'</i></p></div>
                     </div>
                 </div>';
-                $num_registros++;
-                if ($num_registros == 20) break;
-            }
-            echo '</div>';
+
         }
+        echo '</div>';
+    }
     echo '</div>';
 }
 

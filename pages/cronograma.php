@@ -8,98 +8,175 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/style.css">
-    <title>Hello, world!</title>
+    <title>Cronograma de Animes</title>
 </head>
 <body>
 <?php include 'navbar.php';?>
-<nav class="nav nav2">
-    <a class="nav-link active" href="#">Segunda</a>
-    <a class="nav-link" href="#">Terça</a>
-    <a class="nav-link" href="#">Quarta</a>
-    <a class="nav-link" href="#">Quinta</a>
-    <a class="nav-link" href="#">Sexta</a>
-    <a class="nav-link" href="#">Sábado</a>
-    <a class="nav-link" href="#">Domingo</a>
-</nav>
-<div class="container2">
-    <div class="row row-cards">
-        <div class="col-sm">
-            <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
-                <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                <div class="div-titulo"><p class="titulo">Título1</p></div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
-                <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                <div class="div-titulo"><p class="titulo">Título2</p></div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
-                <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                <div class="div-titulo"><p class="titulo">Título3</p></div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
-                <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                <div class="div-titulo"><p class="titulo">Título4</p></div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
-                <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                <div class="div-titulo"><p class="titulo">Título5</p></div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
-                <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                <div class="div-titulo"><p class="titulo">Título5</p></div>
-            </div>
-        </div>
 
-    </div>
-    <div class="row">
-        <div class="col-sm">
-            <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
-                <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                <div class="div-titulo"><p class="titulo">Título1</p></div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
-                <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                <div class="div-titulo"><p class="titulo">Título2</p></div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
-                <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                <div class="div-titulo"><p class="titulo">Título3</p></div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
-                <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                <div class="div-titulo"><p class="titulo">Título4</p></div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
-                <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                <div class="div-titulo"><p class="titulo">Título5</p></div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card card-imagem" onclick="window.location.href='animes_detalhes.php'">
-                <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="../resource/konata.jpg" data-holder-rendered="true" style="height: 260px; width: 100%; display: block;">
-                <div class="div-titulo"><p class="titulo">Título5</p></div>
-            </div>
-        </div>
-    </div>
+<nav class="nav nav2">
+    <?php
+
+
+    $data=date("l");
+    $domingo="Sunday";
+    $segunda="Monday";
+    $terca="Tuesday";
+    $quarta="Wednesday";
+    $quinta="Thursday";
+    $sexta="Friday";
+    $sabado="Saturday";
+    if (strcmp($data, $domingo)==0){
+        echo '<a class="nav-link " href="cronograma_segunda.php" onclick="atualizaCronograma("Mon")">Segunda</a>
+        <a class="nav-link" href="cronograma_terca.php" onclick="atualizaCronograma("Tue")">Terça</a>
+        <a class="nav-link" href="cronograma_quarta.php" onclick="atualizaCronograma("Wed")">Quarta</a>
+        <a class="nav-link" href="cronograma_quinta.php" onclick="atualizaCronograma("Thi")">Quinta</a>
+        <a class="nav-link" href="cronograma_sexta.php" onclick="atualizaCronograma("Fri")">Sexta</a>
+        <a class="nav-link" href="cronograma_sabado.php" onclick="atualizaCronograma("Sat")">Sábado</a>
+        <a class="nav-link active" href="cronograma_domingo.php" onclick="atualizaCronograma("Sun")">Domingo</a>';
+    }
+    else if (strcmp($data, $segunda)==0){
+        echo '<a class="nav-link active" href="cronograma_segunda.php" onclick="atualizaCronograma("Mon")">Segunda</a>
+        <a class="nav-link" href="cronograma_terca.php" onclick="atualizaCronograma("Tue")">Terça</a>
+        <a class="nav-link" href="cronograma_quarta.php" onclick="atualizaCronograma("Wed")">Quarta</a>
+        <a class="nav-link" href="cronograma_quinta.php" onclick="atualizaCronograma("Thi")">Quinta</a>
+        <a class="nav-link" href="cronograma_sexta.php" onclick="atualizaCronograma("Fri")">Sexta</a>
+        <a class="nav-link" href="cronograma_sabado.php" onclick="atualizaCronograma("Sat")">Sábado</a>
+        <a class="nav-link " href="cronograma_domingo.php" onclick="atualizaCronograma("Sun")">Domingo</a>';
+    }
+    else if (strcmp($data, $terca)==0){
+        echo '<a class="nav-link " href="cronograma_segunda.php" onclick="atualizaCronograma("Mon")">Segunda</a>
+        <a class="nav-link active" href="cronograma_terca.php" onclick="atualizaCronograma("Tue")">Terça</a>
+        <a class="nav-link" href="cronograma_quarta.php" onclick="atualizaCronograma("Wed")">Quarta</a>
+        <a class="nav-link" href="cronograma_quinta.php" onclick="atualizaCronograma("Thi")">Quinta</a>
+        <a class="nav-link" href="cronograma_sexta.php" onclick="atualizaCronograma("Fri")">Sexta</a>
+        <a class="nav-link" href="cronograma_sabado.php" onclick="atualizaCronograma("Sat")">Sábado</a>
+        <a class="nav-link " href="cronograma_domingo.php" onclick="atualizaCronograma("Sun")">Domingo</a>';
+    }
+    else if (strcmp($data, $quarta)==0){
+        echo '<a class="nav-link " href="cronograma_segunda.php" onclick="atualizaCronograma("Mon")">Segunda</a>
+        <a class="nav-link" href="cronograma_terca.php" onclick="atualizaCronograma("Tue")">Terça</a>
+        <a class="nav-link active" href="cronograma_quarta.php" onclick="atualizaCronograma("Wed")">Quarta</a>
+        <a class="nav-link" href="cronograma_quinta.php" onclick="atualizaCronograma("Thi")">Quinta</a>
+        <a class="nav-link" href="cronograma_sexta.php" onclick="atualizaCronograma("Fri")">Sexta</a>
+        <a class="nav-link" href="cronograma_sabado.php" onclick="atualizaCronograma("Sat")">Sábado</a>
+        <a class="nav-link " href="cronograma_domingo.php" onclick="atualizaCronograma("Sun")">Domingo</a>';
+    }
+    else if (strcmp($data, $quinta)==0){
+        echo '<a class="nav-link " href="cronograma_segunda.php" onclick="atualizaCronograma("Mon")">Segunda</a>
+        <a class="nav-link" href="cronograma_terca.php" onclick="atualizaCronograma("Tue")">Terça</a>
+        <a class="nav-link" href="cronograma_quarta.php" onclick="atualizaCronograma("Wed")">Quarta</a>
+        <a class="nav-link active" href="cronograma_quinta.php" onclick="atualizaCronograma("Thi")">Quinta</a>
+        <a class="nav-link" href="cronograma_sexta.php" onclick="atualizaCronograma("Fri")">Sexta</a>
+        <a class="nav-link" href="cronograma_sabado.php" onclick="atualizaCronograma("Sat")">Sábado</a>
+        <a class="nav-link " href="cronograma_domingo.php" onclick="atualizaCronograma("Sun")">Domingo</a>';
+    }
+    else if (strcmp($data, $sexta)==0){
+        echo '<a class="nav-link " href="cronograma_segunda.php" onclick="atualizaCronograma("Mon")">Segunda</a>
+        <a class="nav-link" href="cronograma_terca.php" onclick="atualizaCronograma("Tue")">Terça</a>
+        <a class="nav-link" href="cronograma_quarta.php" onclick="atualizaCronograma("Wed")">Quarta</a>
+        <a class="nav-link" href="cronograma_quinta.php" onclick="atualizaCronograma("Thi")">Quinta</a>
+        <a class="nav-link active" href="cronograma_sexta.php" onclick="atualizaCronograma("Fri")">Sexta</a>
+        <a class="nav-link" href="cronograma_sabado.php" onclick="atualizaCronograma("Sat")">Sábado</a>
+        <a class="nav-link " href="cronograma_domingo.php" onclick="atualizaCronograma("Sun")">Domingo</a>';
+    }
+    else if (strcmp($data, $sabado)==0){
+        echo '<a class="nav-link " href="cronograma_segunda.php" onclick="atualizaCronograma("Mon")">Segunda</a>
+        <a class="nav-link" href="cronograma_terca.php" onclick="atualizaCronograma("Tue")">Terça</a>
+        <a class="nav-link" href="cronograma_quarta.php" onclick="atualizaCronograma("Wed")">Quarta</a>
+        <a class="nav-link" href="cronograma_quinta.php" onclick="atualizaCronograma("Thi")">Quinta</a>
+        <a class="nav-link" href="cronograma_sexta.php" onclick="atualizaCronograma("Fri")">Sexta</a>
+        <a class="nav-link active" href="cronograma_sabado.php" onclick="atualizaCronograma("Sat")">Sábado</a>
+        <a class="nav-link " href="cronograma_domingo.php" onclick="atualizaCronograma("Sun")">Domingo</a>';
+    }
+
+    ?>
+</nav>
+<body>
+<div class="container2">
+
+    <?php
+    include_once "conexao.php";
+    include "funcoes.php";
+
+    $data=date("l");
+    $domingo="Sunday";
+    $segunda="Monday";
+    $terca="Tuesday";
+    $quarta="Wednesday";
+    $quinta="Thursday";
+    $sexta="Friday";
+    $sabado="Saturday";
+    if (strcmp($data, $domingo)==0){
+        $sql = "SELECT * FROM anime where broadcast like '%Sunday%'";
+    }
+    else if (strcmp($data, $segunda)==0){
+        $sql = "SELECT * FROM anime where broadcast like '%Monday%'";
+    }
+    else if (strcmp($data, $terca)==0){
+        $sql = "SELECT * FROM anime where broadcast like '%Tuesday%'";
+    }
+    else if (strcmp($data, $quarta)==0){
+        $sql = "SELECT * FROM anime where broadcast like '%Wednesday%'";
+    }
+    else if (strcmp($data, $quinta)==0){
+        $sql = "SELECT * FROM anime where broadcast like '%Thursday%'";
+    }
+    else if (strcmp($data, $sexta)==0){
+        $sql = "SELECT * FROM anime where broadcast like '%Friday%'";
+    }
+    else if (strcmp($data, $sabado)==0){
+        $sql = "SELECT * FROM anime where broadcast like '%Saturday%'";
+    }
+    $result = $conn->query($sql);
+    $count=0;
+
+    if ($result->num_rows > 0) {
+        $aux = ceil(($result->num_rows)/4);
+        ob_start();
+        echo '<div class="container">';
+        for ($i=0; $i<$aux; $i++){
+            echo '<div class="row">';
+            while ($row = $result->fetch_assoc()) {
+
+                $titulo = $row['title'];
+                $rank = $row['rank'];
+                $score = $row['score'];
+                $url_img = $row['img_url'];
+                $id = $row['Id'];
+                echo
+                    '<div class="col-sm-3">
+                        <div class="card card-imagem" onclick="window.location.href=\'animes_detalhes.php?id='.$id.'\'">
+                            <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
+                            <div class="div-titulo"><p class="titulo">#'.$rank.'  ' . $titulo . ' - <i class="fa fa-star" style="color: yellow"> '.$score.'</i></p></div>
+                    </div>
+                </div>';
+
+            }
+            echo '</div>';
+        }
+        echo '</div>';
+    }
+
+    $conn->close();
+    if (isset($_GET['submit'])) {
+        $nome = $_GET['busca'];
+        if($nome!='') {
+
+            buscar($nome, 'anime');
+        }
+    }
+    ?>
 </div>
+</div>
+
+
+<?php
+function atualizaCronograma($dia){
+
+}
+
+
+?>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

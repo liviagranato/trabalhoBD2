@@ -14,12 +14,12 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-<?php include 'navbar.php';?>
+<?php include 'navbar.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Manga</title>
+    <title>Detalhes Staff</title>
 </head>
 <body>
 <?php
@@ -41,71 +41,90 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo '<p><a href="principal.php">Pagina inicial</a></p>' . "\n";
 } else { ?>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <div class="container">
-        <br/>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
-                <form method="get" action="manga.php">
-                    <div class="card-body row no-gutters align-items-center">
-                        <!--end of col-->
-                        <div class="col">
-                            <input class="form-control form-control-lg" name="busca" id="busca" type="search" placeholder="Buscar Manga">
-                        </div>
-                        <!--end of col-->
-                        <div class="col-auto">
-                            <button class="btn btn-lg btn-success" type="submit" name="submit" value="submit" id="submit">Buscar</button>
-                        </div>
-                        <!--end of col-->
-                    </div>
-                </form>
-            </div>
-            <!--end of col-->
-        </div>
-    </div>
+    <nav class="nav">
+        <a class="nav-detalhes-personagem">Detalhes do Staff</a>
+    </nav>
 
 <?php }
 include_once "conexao.php";
-include "funcoes.php";
-
-
-$sql = "SELECT * FROM manga";
+$id = $_GET['id'];
+$sql = "SELECT * FROM person WHERE id = '$id'";
 $result = $conn->query($sql);
-$count=0;
-$num_registros=0;
+
+
+
 if ($result->num_rows > 0) {
-    $aux = ceil(($result->num_rows)/4);
-    ob_start();
     echo '<div class="container">';
-        for ($i=0; $i<$aux; $i++){
-            echo '<div class="row">';
-            while ($row = $result->fetch_assoc()) {
-            $titulo = $row['title'];
-            $url_img = $row['img'];
-            $id = $row['id'];
-                echo
-                    '<div class="col-sm-3">
-                        <div class="card card-imagem" onclick="window.location.href=\'manga_detalhes.php?id='.$id.'\'">
-                            <img class="card-img" data-src="holder.js/100px260/" alt="100%x260" src="' . $url_img . '">
-                            <div class="div-titulo"><p class="titulo">' . $titulo . '</p></div>
-                    </div>
-                </div>';
-                $num_registros++;
-                if ($num_registros == 20) break;
-            }
-            echo '</div>';
-        }
-    echo '</div>';
-}
 
-$conn->close();
-if (isset($_GET['submit'])) {
-    $nome = $_GET['busca'];
-    if($nome!='') {
+    while ($row = $result->fetch_assoc()) {
+        $name = $row['name'];
+        $birthday= $row['birthday'];
+        $about = $row['about'];
+        $memberFavorites = $row['memberFavorites'];
+        $img =$row['image'];
 
-        buscar($nome, 'manga');
+        echo '<h1 class="my-4">'.$name.'
+                        </h1>
+                        <div class="row row-personagem-detalhes">
+                            <div class="col-md-1 col-sm-6 mb-4 imagem-perfil-personagem">
+                                <a href="#">
+                                    <img class="img-fluid"  src="'.$img.'" alt="">
+                                </a>
+                            </div>
+                            <h3 class="my-3">Descrição</h3>
+                            <div class="row">
+                                <div class="col-md-11 col-sm-6 mb-4 descricao-texto-personagem" id="descricao-personagem">
+                                    '.$about.'
+                                </div>
+                            </div>
+                        </div>';
+
     }
 }
+
+$sql = "SELECT p.id as id_pessoa, d.FK_Person_id, d.FK_Personagem_id, pe.id as id_personagem, pe.img, pe.name  
+FROM person as p left join dubla as d on p.id = d.FK_Person_id left join personagem as pe on d.FK_Personagem_id=pe.id where p.id='$id'";
+$result = $conn->query($sql);
+$dubladores = array();
+$index = 0;
+$num_registros=0;
+if ($result->num_rows > 0) {
+    echo '<h3 class="my-4">Personagens Dublados</h3>
+                        <div class="row img-dubladores">';
+
+
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $personagens[$index] = $row['name'];
+        $personagensFoto[$index] = $row['img'];
+        $id_personagem= $row['id_personagem'];
+
+        if (!$personagens[$index]) {
+
+        } else {
+            echo ' 
+                 <div class="col-md-3 col-sm-6 mb-4 personagem-detalhes-card-dubladores" onclick="window.location.href=\'personagem_detalhes.php?id='.$id_personagem.'\'">
+                    <a href="#">
+                        <img class="img-fluid" src="'.$personagensFoto[$index].'" alt="">
+                    </a>
+                    <div>
+                        <h4>'.$personagens[$index].'</h4>
+                    </div>
+                </div>';
+            $index++;
+            $num_registros++;
+            if($num_registros == 5){
+                break;
+            }
+        }
+    }
+    echo '</tbody>
+        </table>';
+
+}
+$conn->close();
 ?>
+
 </body>
 </html>
 
