@@ -21,17 +21,43 @@
         //sleep(3);
         echo $json->{'response'}['mal_id'];
         $anime = $json->{'response'};
+
+        //variaveis
         $aired = NULL;
-        $sql = "INSERT INTO anime VALUES(\' " . $anime['aired']['from']. ",'".  $anime['aired']['to'] . "')";
+        $author = NULL;
+        $dubla = NULL;
+        $faz = NULL;
+        $genre = NULL;
+        $genre_manga = NULL;
+        $genre_anime = NULL;
+        $manga = NULL;
+        $manga_author = NULL;
+        $person = NULL;
+        $personagem = NULL;
+
+        $sql = "INSERT INTO anime VALUES(' " . $anime['aired']['from']. ",'".  $anime['aired']['to'] . "')";
         if (!$db->query($sql)){
             echo '<script>';
             echo 'console.log(';
             echo "\"Erro na execução da query\"";
             echo ');';
             echo '</script>';
+        }
+        else {
             $aired = $db->insert_id;
         }
-        
+
+        $sql = "INSERT INTO author VALUES(' " . $anime['author']['name'] . "')";
+        if (!$db->query($sql)){
+            echo '<script>';
+            echo 'console.log(';
+            echo "\"Erro na execução da query\"";
+            echo ');';
+            echo '</script>';
+        }
+        else {
+            $author = $db->insert_id;
+        }
 
 
         $sql = "INSERT INTO anime VALUES(" .$anime['mal_id'] . ",'" .
@@ -39,16 +65,14 @@
         $anime['title_english'] . "','" . $anime['title_japanese'] . "','" .
         $anime['title_synonyms'] . "','" . $anime['image_url'] . "','" .
         $anime['type'] . "','" . $anime['source'] . "','" .
-        $anime['episodes'] . "','" . $anime['status'] . "','" .
+        $anime['episodes'] . "','" . $anime['status'] . "'," .
         $anime['airing'] . "','" . $anime['aired_string'] . "','" .
-        $aired . "','" . $anime['duration'] . "','" .
+        $aired . ",'" . $anime['duration'] . "','" .
         $anime['rating'] . "','" . $anime['score'] . "','" .
         $anime['scored_by'] . "','" . $anime['rank'] . "','" .
         $anime['popularity'] . "','" . $anime['members'] . "','" .
         $anime['favorites'] . "','" . $anime['synopsis'] . "','" .
-        $anime['premiered'] . "','" . $anime['broadcast'] . "','" .
-        $anime['related'] . "','" . $anime['producer'] . "','" .
-        $anime['licensor'] . "','" . $anime['studio'] . "','" .
+        $anime['premiered'] . "','" . $anime['studio'] . "','" .
         $anime['genre'] . "','" . $anime['opening_theme'] . "','" .
         $anime['ending_theme'] . "')";
         echo $sql;
