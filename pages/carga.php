@@ -31,7 +31,6 @@
         }
         sleep(3);
         $manga = $json->{'response'};
-        var_dump($manga);
         $characters = $anime['character'];
 
         //variaveis
@@ -43,7 +42,7 @@
         $genre_manga = NULL;
         $genre_anime = NULL;
         $manga_author = NULL;
-        $person = NULL;
+        $person = 1;
         $personagem = NULL;
 
         $sql = "INSERT INTO aired(aired_PK, date_from, date_to) VALUES(' " . $anime['aired']['from']. "','".  $anime['aired']['to'] . "')";
@@ -70,7 +69,8 @@
             $author = $db->insert_id;
         }
 
-        $sql = "INSERT INTO manga(id,	img,	volume,	chapter,	status,	score,	rating	,popularity,members,favorites,description,synopsys,title,title_eng,title_jap,type,is_publishing,published,scored_by,rank,broadcast) VALUES('"
+        $sql = "INSERT INTO manga(id,	img,	volume,	chapter,	status,	score,	rating	,popularity,members,favorites,description,synopsys,title,title_eng,title_jap,type,is_publishing,published,scored_by,rank,broadcast) VALUES("
+            . $manga['mal_id'] . ",'"
             . $manga['image_url'] . "',' "
             . $manga['volumes'] . "',' "
             . $manga['chapters'] . "',' "
@@ -78,29 +78,27 @@
             . $manga['score'] . "', NULL ,' "
             . $manga['popularity'] . "',' "
             . $manga['members'] . "',' "
-            . $manga['favorites'] . "',' "
-            . $manga['synopsis'] . "',NULL,' "
+            . $manga['favorites'] . "',\" "
+            . $manga['synopsis'] . "\",NULL,' "
             . $manga['title']. "',' "
             . $manga['title_english'] . "',' "
             . $manga['title_japanese'] . "',' "
-            . $manga['type'] . "',' "
+            . $manga['type'] . "', '"
             . $manga['publishing'] . "',' "
             . $manga['published_string'] . "', '"
             . $manga['scored_by'] . "',' "
             . $manga['rank'] .  "', NULL);";
-
-        echo $sql;
         if (!$db->query($sql)){
             echo '<script>';
             echo 'console.log(';
-            echo "\"Erro na execução da query\"";
+            echo "\"Erro na execução da query manga\"";
             echo ');';
             echo '</script>';
+            $manga = 1;
         }
         else {
             $manga = $db->insert_id;
         }
-
         $sql = "INSERT INTO faz(FK_Person_id,FK_Manga_id) VALUES(" . $person . ", ". $manga .");";
         if (!$db->query($sql)){
             echo '<script>';
@@ -115,8 +113,8 @@
 
 
         $sql = "INSERT INTO anime(Id,link_canonical,title,title_eng,title_jap,img_url,type,source_type,episodes,status,airing,aired_string,FK_aired_aired_PK,duration,rating,score,scored_by,rank,popularity,members,favorites,synopses,premiered,broadcast,FK_Manga_id) VALUES(" .$anime['mal_id'] . ",'" .
-        $anime['link_canonical'] . "','" . $anime['title'] . "','" .
-        $anime['title_english'] . "','" . $anime['title_japanese'] . "','"
+        $anime['link_canonical'] . "',\"" . $anime['title'] . "\",\"" .
+        $anime['title_english'] . "\",'" . $anime['title_japanese'] . "','"
         . "','" . $anime['image_url'] . "','" .
         $anime['type'] . "','" . $anime['source'] . "'," .
         $anime['episodes'] . ",'" . $anime['status'] . "','" .
@@ -125,15 +123,16 @@
         $anime['rating'] . "','" . $anime['score'] . "','" .
         $anime['scored_by'] . "','" . $anime['rank'] . "','" .
         $anime['popularity'] . "','" . $anime['members'] . "','" .
-        $anime['favorites'] . "','" . $anime['synopsis'] . "','" .
-        $anime['premiered'] . "','" . $anime['broadcast'] . "'," .
+        $anime['favorites'] . "',\"" . str_replace('"', '\"', $anime['synopsis']) . "\",'" .
+        $anime['premiered'] . "','" . str_replace('"', '\"', $anime['broadcast']) . "\"," .
         $manga . ");";
         if (!$db->query($sql)){
             echo '<script>';
             echo 'console.log(';
-            echo "\"Erro na execução da query\"";
+            echo "\"Erro na execução da query anime\"";
             echo ');';
             echo '</script>';
+            echo $sql;
         }
         else{
             $anime = $db->insert_id;
