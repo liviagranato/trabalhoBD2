@@ -155,43 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
     }
-$sql = "SELECT m.id, p.name, p.img, p.FK_Manga_id FROM manga as m left join personagem as p on m.id=p.FK_Manga_id where m.id='$id'";
-$result = $conn->query($sql);
-$personagens = array();
-$index = 0;
-$num_registros=0;
-if ($result->num_rows > 0) {
 
-    echo '
-<div class="container">
-               <h3 class="my-4">Personagens Principais</h3>
-               <table class="table table-striped card-dubladores">
-                        <tbody>';
-
-
-    while ($row = mysqli_fetch_assoc($result)) {
-        $personagem[$index] = $row['name'];
-        $personagemFoto[$index] = $row['img'];
-
-            echo ' 
-                            <tr>
-                                <td>
-                                    <div>
-                                        <img class="img-dubladores-card left card-espacamento" src="' . $personagemFoto[$index] . '">
-                                        <div class="img-dubladores-text">' . $personagem[$index] . '</div>
-                                    </div>
-                                </td>
-                            </tr>';
-            $index++;
-        $num_registros++;
-        if($num_registros == 5){
-            break;
-        }
-    }
-    echo '</tbody>
-        </table>';
-
-}
     $conn->close();
     ?>
 
