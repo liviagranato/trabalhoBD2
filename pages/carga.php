@@ -32,7 +32,7 @@
         sleep(3);
         echo $json->{'response'}['mal_id'];
         $anime = $json->{'response'};
-        $characters = $anime['characters'];
+        $characters = $anime['character'];
 
         //variaveis
         $aired = NULL;
@@ -205,7 +205,8 @@
 
         foreach ($characters as $crt){
 
-            $sql = "INSERT INTO person VALUES(" . $anime["?"]  . ", ". $anime["?"] .")";
+            $sql = "INSERT INTO person VALUES('" . $crt["voice_actor"][0]['name'] .
+                "','" .$crt["voice_actor"][0]['img_url'] ."');";
             if (!$db->query($sql)){
                 echo '<script>';
                 echo 'console.log(';
@@ -220,7 +221,7 @@
             $sql = "INSERT INTO personagem VALUES(' " . $crt['name'] . "','" .
                 $crt['name_kanji'] . "','" . $crt['nickname'] . "','" .
                 $crt['about'] . "','" .  $crt['memberFavorites'] . "','" .
-                $crt['img'] . "',Null, " .  $anime . ")";
+                $crt['url_img'] . "',Null, " .  $anime . ")";
             if (!$db->query($sql)){
                 echo '<script>';
                 echo 'console.log(';
