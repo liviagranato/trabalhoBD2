@@ -18,24 +18,7 @@ require_once "../vendor/autoload.php"; // require your composer autoloader file 
 $jikan = new Jikan\Jikan;
 
 
-for ($i=1; $i<10; $i++){
 
-      try {
-        var_dump($jikan->Anime($i)->response);
-        echo '</br></br>';
-        var_dump($jikan->Manga($i)->response); 
-        echo '</br></br>';
-          echo '<script>';
-          echo 'console.log(' . $i . ')';
-          echo '</script>';
-    } catch (Exception $e) {
-        echo '<script>';
-        echo 'console.log(';
-        echo 'Caught exception: ', $e->getMessage(); // "File does not exist" (the anime with this ID doesn't exist on MAL)
-        echo ');';
-        echo '</script>';    
-    }
-    sleep(3);
 
 ?>
 
