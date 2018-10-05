@@ -8,7 +8,6 @@
     require_once "../vendor/autoload.php"; // require your composer autoloader file wherever it is
 
     $jikan = new Jikan\Jikan;
-    // $db->insert_id
     for ($i=1; $i<10000; $i++){
         try {
             $json = $jikan->Anime($i);
@@ -72,21 +71,26 @@
             $author = $db->insert_id;
         }
 
-        //TODO: continuar
 
-        $sql = "INSERT INTO genre VALUES(' " . $anime['author']['name'] . "')";
-        if (!$db->query($sql)){
-            echo '<script>';
-            echo 'console.log(';
-            echo "\"Erro na execução da query\"";
-            echo ');';
-            echo '</script>';
-        }
-        else {
-            $genre = $db->insert_id;
-        }
 
-        $sql = "INSERT INTO manga VALUES(' " . $anime['author']['name'] . "')";
+        $sql = "INSERT INTO manga VALUES('"
+            . $manga['image_url'] . "',' "
+            . $manga['volumes'] . "',' "
+            . $manga['chapters'] . "',' "
+            . $manga['status'] . "',' "
+            . $manga['score'] . "', NULL ,' "
+            . $manga['popularity'] . "',' "
+            . $manga['members'] . "',' "
+            . $manga['favorites'] . "',' "
+            . $manga['synopsis'] . "',NULL,' "
+            . $manga['title']. "',' "
+            . $manga['title_english'] . "',' "
+            . $manga['title_japanese'] . "',' "
+            . $manga['type'] . "',' "
+            . $manga['publishing'] . "',' "
+            . $manga['published_string'] . "', '"
+            . $manga['scored_by'] . "',' "
+            . $manga['rank'] .  "', NULL)";
         if (!$db->query($sql)){
             echo '<script>';
             echo 'console.log(';
@@ -113,8 +117,8 @@
 
         $sql = "INSERT INTO anime VALUES(" .$anime['mal_id'] . ",'" .
         $anime['link_canonical'] . "','" . $anime['title'] . "','" .
-        $anime['title_english'] . "','" . $anime['title_japanese'] . "','" .
-        $anime['title_synonyms'] . "','" . $anime['image_url'] . "','" .
+        $anime['title_english'] . "','" . $anime['title_japanese'] . "','"
+        . "','" . $anime['image_url'] . "','" .
         $anime['type'] . "','" . $anime['source'] . "'," .
         $anime['episodes'] . ",'" . $anime['status'] . "','" .
         $anime['airing'] . "','" . $anime['aired_string'] . "'," .
@@ -137,28 +141,54 @@
             $anime = $db->insert_id;
         }
 
-        $sql = "INSERT INTO genre_manga VALUES(" . $manga . ", ". $genre .")";
-        if (!$db->query($sql)){
-            echo '<script>';
-            echo 'console.log(';
-            echo "\"Erro na execução da query\"";
-            echo ');';
-            echo '</script>';
+        foreach ($manga['genre'] as $gn){
+            $sql = "INSERT INTO genre VALUES(' " . $gn['name'] . "')";
+            if (!$db->query($sql)){
+                echo '<script>';
+                echo 'console.log(';
+                echo "\"Erro na execução da query\"";
+                echo ');';
+                echo '</script>';
+            }
+            else {
+                $genre = $db->insert_id;
+            }
+            $sql = "INSERT INTO genre_manga VALUES(" . $manga . ", ". $genre .")";
+            if (!$db->query($sql)){
+                echo '<script>';
+                echo 'console.log(';
+                echo "\"Erro na execução da query\"";
+                echo ');';
+                echo '</script>';
+            }
+            else {
+                $genre_manga = $db->insert_id;
+            }
         }
-        else {
-            $genre_manga = $db->insert_id;
-        }
-
-        $sql = "INSERT INTO genre_anime VALUES(" . $anime . ", ". $genre .")";
-        if (!$db->query($sql)){
-            echo '<script>';
-            echo 'console.log(';
-            echo "\"Erro na execução da query\"";
-            echo ');';
-            echo '</script>';
-        }
-        else {
-            $genre_anime = $db->insert_id;
+        foreach ($anime['genre'] as $gn){
+            $sql = "INSERT INTO genre VALUES(' " . $gn['name'] . "')";
+            if (!$db->query($sql)){
+                echo '<script>';
+                echo 'console.log(';
+                echo "\"Erro na execução da query\"";
+                echo ');';
+                echo '</script>';
+            }
+            else {
+                $genre = $db->insert_id;
+            }
+            $sql = "INSERT INTO genre_anime VALUES(" . $snime. ", ". $genre
+                .")";
+            if (!$db->query($sql)){
+                echo '<script>';
+                echo 'console.log(';
+                echo "\"Erro na execução da query\"";
+                echo ');';
+                echo '</script>';
+            }
+            else {
+                $genre_manga = $db->insert_id;
+            }
         }
 
         $sql = "INSERT INTO manga_author VALUES(" . $manga . ", ". $author .")";
@@ -190,7 +220,7 @@
             $sql = "INSERT INTO personagem VALUES(' " . $crt['name'] . "','" .
                 $crt['name_kanji'] . "','" . $crt['nickname'] . "','" .
                 $crt['about'] . "','" .  $crt['memberFavorites'] . "','" .
-                $crt['img'] . "'," .  $anime . ")";
+                $crt['img'] . "',Null, " .  $anime . ")";
             if (!$db->query($sql)){
                 echo '<script>';
                 echo 'console.log(';
