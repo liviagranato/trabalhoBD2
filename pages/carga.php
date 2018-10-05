@@ -9,7 +9,7 @@
 
     $jikan = new Jikan\Jikan;
     // $db->insert_id
-    for ($i=1; $i<2; $i++){ 
+    for ($i=1; $i<10000; $i++){
         try {
             $json = $jikan->Anime($i);
             var_dump($json);
@@ -17,10 +17,23 @@
             echo '<script>';
             echo 'console.log(';
             echo 'Caught exception: ', $e->getMessage(); // "File does not exist" (the anime with this ID doesn't exist on MAL)
+            echo ');';
         }
-        //sleep(3);
+        $anime = $json->{'response'};
+
+        try {
+            $json = $jikan->Manga($i);
+            var_dump($json);
+        } catch (Exception $e) {
+            echo '<script>';
+            echo 'console.log(';
+            echo 'Caught exception: ', $e->getMessage(); // "File does not exist" (the anime with this ID doesn't exist on MAL)
+            echo ');';
+        }
+        sleep(3);
         echo $json->{'response'}['mal_id'];
         $anime = $json->{'response'};
+        $characters = $anime['characters'];
 
         //variaveis
         $aired = NULL;
@@ -35,7 +48,7 @@
         $person = NULL;
         $personagem = NULL;
 
-        $sql = "INSERT INTO anime VALUES(' " . $anime['aired']['from']. ",'".  $anime['aired']['to'] . "')";
+        $sql = "INSERT INTO aired VALUES(' " . $anime['aired']['from']. "','".  $anime['aired']['to'] . "')";
         if (!$db->query($sql)){
             echo '<script>';
             echo 'console.log(';
@@ -47,7 +60,7 @@
             $aired = $db->insert_id;
         }
 
-        $sql = "INSERT INTO author VALUES(' " . $anime['author']['name'] . "')";
+        $sql = "INSERT INTO author VALUES(' " . $manga['author']['name'] . "')";
         if (!$db->query($sql)){
             echo '<script>';
             echo 'console.log(';
@@ -60,42 +73,6 @@
         }
 
         //TODO: continuar
-        $sql = "INSERT INTO person VALUES(" . $anime["?"]  . ", ". $anime["?"] .")";
-        if (!$db->query($sql)){
-            echo '<script>';
-            echo 'console.log(';
-            echo "\"Erro na execução da query\"";
-            echo ');';
-            echo '</script>';
-        }
-        else {
-            $person = $db->insert_id;
-        }
-
-        $sql = "INSERT INTO personagem VALUES(' " . $anime['author']['name'] . "')";
-        if (!$db->query($sql)){
-            echo '<script>';
-            echo 'console.log(';
-            echo "\"Erro na execução da query\"";
-            echo ');';
-            echo '</script>';
-        }
-        else {
-            $personagem = $db->insert_id;
-        }
-
-
-        $sql = "INSERT INTO dubla VALUES(" . $person . ", ". $personagem .")";
-        if (!$db->query($sql)){
-            echo '<script>';
-            echo 'console.log(';
-            echo "\"Erro na execução da query\"";
-            echo ');';
-            echo '</script>';
-        }
-        else {
-            $dubla = $db->insert_id;
-        }
 
         $sql = "INSERT INTO genre VALUES(' " . $anime['author']['name'] . "')";
         if (!$db->query($sql)){
@@ -138,9 +115,9 @@
         $anime['link_canonical'] . "','" . $anime['title'] . "','" .
         $anime['title_english'] . "','" . $anime['title_japanese'] . "','" .
         $anime['title_synonyms'] . "','" . $anime['image_url'] . "','" .
-        $anime['type'] . "','" . $anime['source'] . "','" .
-        $anime['episodes'] . "','" . $anime['status'] . "'," .
-        $anime['airing'] . "','" . $anime['aired_string'] . "','" .
+        $anime['type'] . "','" . $anime['source'] . "'," .
+        $anime['episodes'] . ",'" . $anime['status'] . "','" .
+        $anime['airing'] . "','" . $anime['aired_string'] . "'," .
         $aired . ",'" . $anime['duration'] . "','" .
         $anime['rating'] . "','" . $anime['score'] . "','" .
         $anime['scored_by'] . "','" . $anime['rank'] . "','" .
@@ -196,6 +173,49 @@
             $manga_author = $db->insert_id;
         }
 
+        foreach ($characters as $crt){
+
+            $sql = "INSERT INTO person VALUES(" . $anime["?"]  . ", ". $anime["?"] .")";
+            if (!$db->query($sql)){
+                echo '<script>';
+                echo 'console.log(';
+                echo "\"Erro na execução da query\"";
+                echo ');';
+                echo '</script>';
+            }
+            else {
+                $person = $db->insert_id;
+            }
+
+            $sql = "INSERT INTO personagem VALUES(' " . $crt['name'] . "','" .
+                $crt['name_kanji'] . "','" . $crt['nickname'] . "','" .
+                $crt['about'] . "','" .  $crt['memberFavorites'] . "','" .
+                $crt['img'] . "'," .  $anime . ")";
+            if (!$db->query($sql)){
+                echo '<script>';
+                echo 'console.log(';
+                echo "\"Erro na execução da query\"";
+                echo ');';
+                echo '</script>';
+            }
+            else {
+                $personagem = $db->insert_id;
+            }
+
+
+            $sql = "INSERT INTO dubla VALUES(" . $person . ", ". $personagem .")";
+            if (!$db->query($sql)){
+                echo '<script>';
+                echo 'console.log(';
+                echo "\"Erro na execução da query\"";
+                echo ');';
+                echo '</script>';
+            }
+            else {
+                $dubla = $db->insert_id;
+            }
+
+        }
 
     }
     $db->close();
